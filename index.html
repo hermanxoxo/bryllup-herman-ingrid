@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingrid &amp; Herman gifter seg</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ======= HERO =======
+       Hero-bilde: images/Banner.png (akvarell-banner med Loshavn, Ingrid og Herman)
+       Bytt filnavn her for å bruke et annet hero-bilde -->
+  <section class="hero">
+    <img
+      class="hero__bg"
+      src="images/Banner.png"
+      alt="Ingrid og Herman gifter seg – Loshavn 3. juli 2027"
+    />
+    <div class="hero__overlay"></div>
+    <a href="#program" class="hero__scroll" aria-label="Scroll til program">
+      <span class="hero__scroll-icon">↓</span>
+    </a>
+  </section>
+
+  <!-- ======= PROGRAM ======= -->
+  <section class="section program" id="program">
+    <div class="container">
+      <h2 class="section__title">Program</h2>
+      <p class="section__subtitle">5.–7. juli 2027 · Loshavn</p>
+
+      <div class="tabs" role="tablist" aria-label="Programdager">
+        <button class="tab tab--active" role="tab" aria-selected="true"  data-day="torsdag">Torsdag</button>
+        <button class="tab"             role="tab" aria-selected="false" data-day="fredag">Fredag</button>
+        <button class="tab"             role="tab" aria-selected="false" data-day="lordag">Lørdag</button>
+      </div>
+
+      <!-- Torsdag 5. juli -->
+      <div class="day-panel day-panel--active" id="torsdag" role="tabpanel">
+        <p class="day-panel__date">Torsdag 5. juli</p>
+        <ul class="schedule">
+          <li class="schedule__item">
+            <span class="schedule__time">Fra kl. 14:00</span>
+            <div class="schedule__info">
+              <strong>Ankomst Rederiet Hotel</strong>
+              <span>Sjekk inn og gjør deg klar for helgen</span>
+            </div>
+          </li>
+          <li class="schedule__item">
+            <span class="schedule__time">Kl. 19:00</span>
+            <div class="schedule__info">
+              <strong>Grilling på kvelden</strong>
+              <span>Uformell samling på resorten</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Fredag 6. juli -->
+      <div class="day-panel" id="fredag" role="tabpanel">
+        <p class="day-panel__date">Fredag 6. juli</p>
+        <ul class="schedule">
+          <li class="schedule__item">
+            <span class="schedule__time">Formiddag</span>
+            <div class="schedule__info">
+              <strong>Guidet tur med Endre</strong>
+              <span>Sjøfartsmuseet i Farsund</span>
+            </div>
+          </li>
+          <li class="schedule__item">
+            <span class="schedule__time">Kl. 15:00</span>
+            <div class="schedule__info">
+              <strong>Vannski med Onkel Are</strong>
+              <span>Ta på deg badetøyet!</span>
+            </div>
+          </li>
+          <li class="schedule__item">
+            <span class="schedule__time">Kl. 16:30</span>
+            <div class="schedule__info">
+              <strong>Pokeropplæring med Inger-Elise</strong>
+              <span>Eikvåg</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Lørdag 7. juli -->
+      <div class="day-panel" id="lordag" role="tabpanel">
+        <p class="day-panel__date">Lørdag 7. juli · Bryllupsdagen</p>
+        <ul class="schedule">
+          <li class="schedule__item">
+            <span class="schedule__time">Fra kl. 11:00</span>
+            <div class="schedule__info">
+              <strong>Båttaxi fra Farsund sentrum</strong>
+              <span>Båten går til Loshavn – ikke gå glipp av den!</span>
+            </div>
+          </li>
+          <li class="schedule__item">
+            <span class="schedule__time">Kl. 12:00</span>
+            <div class="schedule__info">
+              <strong>Vielse</strong>
+              <span>Loshavn bedehus</span>
+            </div>
+          </li>
+          <li class="schedule__item">
+            <span class="schedule__time">Kl. 15:00</span>
+            <div class="schedule__info">
+              <strong>Middag</strong>
+              <span>Eikvåg</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PARBILDE / OM OSS =======
+       Parbilde: images/IMG_2026.jpeg
+       Bytt filnavn her dersom du laster opp et nytt bilde av paret -->
+  <section class="section couple">
+    <div class="container couple__inner">
+      <div class="couple__img-wrap">
+        <img
+          src="images/IMG_2026.jpeg"
+          alt="Ingrid og Herman"
+          class="couple__img"
+        />
+      </div>
+      <div class="couple__text">
+        <h2 class="section__title section__title--left">Ingrid &amp; Herman</h2>
+        <p>
+          Vi er så glade for å feire denne helgen med dere – familie og venner
+          som betyr aller mest for oss. Gleder oss til å se alle i det vakre
+          Loshavn i sommer!
+        </p>
+        <p class="couple__sig">Med kjærlighet, Ingrid &amp; Herman</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= HOTELL ======= -->
+  <section class="section hotel" id="hotell">
+    <div class="container">
+      <h2 class="section__title">Overnatting</h2>
+      <p class="section__subtitle">Rederiet Hotel · Farsund</p>
+      <div class="hotel__card">
+        <div class="hotel__text">
+          <p>
+            Vi har reservert rom på <strong>Rederiet Hotel</strong> i Farsund for bryllupshelgen.
+            Bruk rabattkoden nedenfor ved bestilling for å få pris på den avtalte gruppeprisen.
+          </p>
+          <p>
+            Hotellet ligger i hjertet av Farsund, med enkel tilgang til båttaxi
+            til Loshavn lørdag morgen.
+          </p>
+        </div>
+        <div class="hotel__code-wrap">
+          <p class="hotel__code-label">Rabattkode ved bestilling</p>
+          <div class="hotel__code" id="hotelCode">IOGH2027</div>
+          <button class="hotel__copy-btn" onclick="copyCode()" aria-label="Kopier rabattkode">
+            Kopier kode
+          </button>
+          <p class="hotel__copy-confirm" id="copyConfirm">Kopiert!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ØNSKELISTE ======= -->
+  <section class="section wishes" id="onskeliste">
+    <div class="container">
+      <h2 class="section__title">Ønskeliste</h2>
+      <p class="section__subtitle">Det viktigste er at du er der!</p>
+      <p class="wishes__intro">
+        Din tilstedeværelse er det fineste du kan gi oss. Ønsker du likevel å
+        gi en gave, setter vi stor pris på ett av følgende:
+      </p>
+      <div class="wishes__grid">
+
+        <div class="wish-card">
+          <div class="wish-card__icon">✈️</div>
+          <h3>Bidrag til bryllupsreisen</h3>
+          <p>Hjelp oss å skape uforglemmelige minner på vår første reise som gift par.</p>
+          <div class="wish-card__account">
+            <span class="wish-card__account-label">Kontonummer</span>
+            <!-- Bytt ut kontonummeret nedenfor med ditt eget -->
+            <span class="wish-card__account-number">XXXX XX XXXXX</span>
+          </div>
+          <p class="wish-card__note">Merk overføringen: <em>Bryllupsreise</em></p>
+        </div>
+
+        <div class="wish-card">
+          <div class="wish-card__icon">🛁</div>
+          <h3>Lexington håndklær</h3>
+          <p>
+            Vi drømmer om myke, vakre håndklær fra Lexington til det nye hjemmet.
+            Tilgjengelig hos Lexington eller utvalgte nettbutikker.
+          </p>
+          <ul class="wish-card__list">
+            <li>Bath Towel – Striped Terry</li>
+            <li>Hand Towel – Striped Terry</li>
+            <li>Guest Towel – Striped Terry</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <p>Ingrid &amp; Herman · 3. juli 2027 · Loshavn</p>
+    <p class="footer__small">Med glede &amp; kjærlighet</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
