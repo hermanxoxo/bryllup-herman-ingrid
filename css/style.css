@@ -257,6 +257,12 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--text-light);
 }
 
+.schedule__note {
+  font-size: .85rem !important;
+  font-style: italic;
+  color: var(--brown) !important;
+}
+
 /* ===========================
    PARET
    =========================== */
