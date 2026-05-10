@@ -80,14 +80,6 @@ img { display: block; max-width: 100%; height: auto; }
   margin: 0 auto;
 }
 
-/* Mobil: portrettbilde (Banner3_mobil.jpg) vises med contain – ingen zoom */
-@media (max-width: 768px) {
-  .hero__bg {
-    max-width: 100%;
-    object-fit: contain;
-    background: #FCFAF6;
-  }
-}
 
 .hero__overlay {
   position: absolute;

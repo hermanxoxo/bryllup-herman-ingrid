@@ -37,25 +37,23 @@
        Hero-bilde: images/Banner.png (akvarell-banner med Loshavn, Ingrid og Herman)
        Bytt filnavn her for å bruke et annet hero-bilde -->
   <section class="hero">
-    <!-- Mobil: Banner3_mobil.jpg (900×760, ingen zoom)
-         Desktop: Banner3.png (1959×803, landscape) -->
-    <picture>
-      <source media="(max-width: 768px)" srcset="images/Banner3_mobil.jpg" />
-      <img
-        class="hero__bg"
-        src="images/Banner3.png"
-        alt="Ingrid og Herman gifter seg – Loshavn 7. august 2027"
-      />
-    </picture>
+    <img
+      class="hero__bg"
+      src="images/Banner3.png"
+      alt="Ingrid og Herman gifter seg – Loshavn 7. august 2027"
+    />
     <div class="hero__overlay"></div>
     <a href="#program" class="hero__scroll" aria-label="Scroll til program">
       <span class="hero__scroll-icon">↓</span>
     </a>
   </section>
 
-  <!-- ======= INTRO ======= -->
-  <section class="section intro-seksjon">
+  <!-- ======= PROGRAM ======= -->
+  <section class="section program" id="program">
     <div class="container">
+      <h2 class="section__title">Program</h2>
+      <p class="section__subtitle">6.–8. august 2027</p>
+
       <p class="program__intro">
         Vi planlegger å gifte oss i nydelige Farsund, og håper dere har mulighet til å tilbringe
         bryllupshelgen sammen med oss. Vi legger opp til en helg fylt med hyggelige opplevelser,
@@ -70,14 +68,6 @@
         Vi har holdt av hotellrom for de som ønsker å bo på Rederiet Hotell i Farsund sentrum.
         Rom kan bookes med koden som ligger lenger nede på siden.
       </p>
-    </div>
-  </section>
-
-  <!-- ======= PROGRAM ======= -->
-  <section class="section program" id="program">
-    <div class="container">
-      <h2 class="section__title">Program</h2>
-      <p class="section__subtitle">6.–8. august 2027</p>
 
       <div class="tabs" role="tablist" aria-label="Programdager">
         <button class="tab tab--active" role="tab" aria-selected="true"  data-day="fredag">Fredag</button>
