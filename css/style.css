@@ -65,16 +65,12 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===========================
    HERO
    =========================== */
-/* Banner.png er 1774×887 (2:1).
-   object-fit: contain viser hele bildet uten zoom eller beskjæring.
-   Krem-bakgrunn matcher bildets egen bakgrunnsfarge sømløst. */
+/* Desktop: banner vises i naturlig 2:1-format.
+   Mobil: fyller skjermen med object-fit cover, teksten i bildet sentreres. */
 .hero {
   position: relative;
   width: 100%;
   background: #FCFAF6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero__bg {
@@ -83,6 +79,24 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: 1600px;
   height: auto;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center 20%;
+    margin: 0;
+  }
 }
 
 .hero__overlay {
