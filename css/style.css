@@ -557,6 +557,69 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* ===========================
+   TING Å GJØRE
+   =========================== */
+.aktiviteter { background: var(--cream); }
+
+.aktiviteter__intro {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-light);
+  font-size: .97rem;
+  line-height: 1.75;
+}
+
+.aktiviteter__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.aktivitet-kort {
+  background: var(--white);
+  border: 1px solid var(--beige);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.aktivitet-kort:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(61,47,30,.15);
+}
+
+.aktivitet-kort__ikon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.aktivitet-kort h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+.aktivitet-kort p {
+  font-size: .88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .aktiviteter__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .aktiviteter__grid { grid-template-columns: 1fr; }
+}
+
+/* ===========================
    PÅMELDING (teaser-seksjon)
    =========================== */
 .rsvp-teaser { background: var(--brown-dark); }
