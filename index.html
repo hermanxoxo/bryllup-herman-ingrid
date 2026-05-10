@@ -37,11 +37,16 @@
        Hero-bilde: images/Banner.png (akvarell-banner med Loshavn, Ingrid og Herman)
        Bytt filnavn her for å bruke et annet hero-bilde -->
   <section class="hero">
-    <img
-      class="hero__bg"
-      src="images/Banner3.png"
-      alt="Ingrid og Herman gifter seg – Loshavn 7. august 2027"
-    />
+    <!-- Mobil: Banner3_mobil.jpg (900×760, ingen zoom)
+         Desktop: Banner3.png (1959×803, landscape) -->
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/Banner3_mobil.jpg" />
+      <img
+        class="hero__bg"
+        src="images/Banner3.png"
+        alt="Ingrid og Herman gifter seg – Loshavn 7. august 2027"
+      />
+    </picture>
     <div class="hero__overlay"></div>
     <a href="#program" class="hero__scroll" aria-label="Scroll til program">
       <span class="hero__scroll-icon">↓</span>

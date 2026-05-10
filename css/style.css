@@ -65,28 +65,27 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===========================
    HERO
    =========================== */
-/* Hero: alltid object-fit cover med eksplisitt høyde per skjermstørrelse */
+/* Hero desktop: naturlig bredde, ingen zoom */
 .hero {
   position: relative;
   width: 100%;
   background: #FCFAF6;
-  height: 100svh;        /* Fullskjerm på mobil */
-  overflow: hidden;
 }
 
 .hero__bg {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
+  max-width: 1600px;
+  height: auto;
+  margin: 0 auto;
 }
 
-/* Desktop: reduser høyden slik at mer av 2:1-banneret er synlig */
-@media (min-width: 769px) {
-  .hero {
-    height: clamp(420px, 52vw, 820px);
+/* Mobil: portrettbilde (Banner3_mobil.jpg) vises med contain – ingen zoom */
+@media (max-width: 768px) {
+  .hero__bg {
+    max-width: 100%;
+    object-fit: contain;
+    background: #FCFAF6;
   }
 }
 
