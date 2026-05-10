@@ -1,4 +1,4 @@
-const KODE = 'glastad';
+const KODE = 'loshavn';
 const SESJON_NOKKEL = 'bryllup_adgang';
 
 const overlay   = document.getElementById('passordOverlay');

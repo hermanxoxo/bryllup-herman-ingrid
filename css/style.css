@@ -424,7 +424,8 @@ img { display: block; max-width: 100%; height: auto; }
 
 .wishes__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 480px);
+  justify-content: center;
   gap: 1.5rem;
 }
 
