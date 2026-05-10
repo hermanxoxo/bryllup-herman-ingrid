@@ -124,6 +124,17 @@ img { display: block; max-width: 100%; height: auto; }
    =========================== */
 .program { background: var(--cream); }
 
+.program__intro {
+  max-width: 620px;
+  margin: 0 auto .9rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: .97rem;
+  line-height: 1.75;
+}
+
+.program__intro + .tabs { margin-top: 2rem; }
+
 .tabs {
   display: flex;
   justify-content: center;
