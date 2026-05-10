@@ -1,3 +1,6 @@
+// Google Apps Script URL – skriver direkte til Google Sheets
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzpwIHN5Jwm3eKSlXJPju1TeLAtJjVF7i16uf7ni9c2PUYr8O2OnA3H0ofE7RzBqn9p0g/exec';
+
 // Vis/skjul følge-felt
 const hasGuestCheckbox  = document.getElementById('hasGuest');
 const guestNameField    = document.getElementById('guestNameField');
@@ -17,7 +20,7 @@ allergyCount.addEventListener('change', () => {
   allergyDetailField.hidden = allergyCount.value === '0';
 });
 
-// Skjema-innsending via Formsubmit.co (sender e-post til hermanhaukenes@yahoo.no)
+// Skjema-innsending → Google Sheets
 const form        = document.getElementById('rsvpForm');
 const submitBtn   = document.getElementById('submitBtn');
 const formSuccess = document.getElementById('formSuccess');
@@ -25,7 +28,7 @@ const formSuccess = document.getElementById('formSuccess');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // Enkel validering
+  // Validering
   let valid = true;
 
   const nameInput = document.getElementById('name');
@@ -50,33 +53,35 @@ form.addEventListener('submit', async (e) => {
 
   if (!valid) return;
 
-  // Send via Formsubmit.co AJAX
-  submitBtn.disabled = true;
+  submitBtn.disabled    = true;
   submitBtn.textContent = 'Sender …';
 
-  const data = new FormData(form);
-  // Formsubmit-konfigurasjon
-  data.append('_subject', `Påmelding til bryllup – ${nameInput.value.trim()}`);
-  data.append('_captcha',  'false');
-  data.append('_template', 'table');
+  const payload = {
+    'Navn':                   nameInput.value.trim(),
+    'Navn på følge':          hasGuestCheckbox.checked ? guestNameInput.value.trim() : '–',
+    'Allergi og preferanser': allergyCount.value !== '0'
+                                ? document.getElementById('allergyDetail').value.trim() || '–'
+                                : '–',
+    'Kommentar':              document.getElementById('comment').value.trim() || '–',
+  };
 
   try {
-    const res = await fetch('https://formsubmit.co/ajax/hermanhaukenes@yahoo.no', {
+    // no-cors: Google Apps Script støtter ikke CORS-headers fra nettleser,
+    // men data skrives til arket uansett. Vi viser alltid suksess ved ingen nettverksfeil.
+    await fetch(SHEET_URL, {
       method:  'POST',
-      headers: { Accept: 'application/json' },
-      body:    data,
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body:    JSON.stringify(payload),
     });
 
-    if (res.ok) {
-      form.hidden         = true;
-      formSuccess.hidden  = false;
-      document.querySelector('.form-intro').hidden = true;
-    } else {
-      throw new Error('server-error');
-    }
+    form.hidden        = true;
+    formSuccess.hidden = false;
+    document.querySelector('.form-intro').hidden = true;
+
   } catch {
     submitBtn.disabled    = false;
     submitBtn.textContent = 'Send påmelding';
-    alert('Noe gikk galt. Prøv igjen eller send e-post til hermanhaukenes@yahoo.no.');
+    alert('Noe gikk galt. Prøv igjen eller kontakt oss direkte.');
   }
 });
