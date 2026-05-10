@@ -230,6 +230,15 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: 1rem;
   font-weight: 700;
   color: var(--brown-dark);
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.schedule__icon {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .schedule__info span {
