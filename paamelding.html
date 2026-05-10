@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Påmelding – Ingrid &amp; Herman</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/paamelding.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body class="form-page">
+
+  <header class="form-header">
+    <a href="index.html" class="form-header__back">← Tilbake</a>
+    <p class="form-header__title">Ingrid &amp; Herman · 3. juli 2027</p>
+  </header>
+
+  <main class="form-main">
+    <div class="form-card">
+
+      <!-- Intro -->
+      <div class="form-intro">
+        <h1 class="section__title">Påmelding til bryllup</h1>
+        <p>
+          Vi er glade for at du vil feire denne dagen med oss!
+          Fyll ut skjemaet nedenfor for å bekrefte din deltakelse.
+          Svarfrist: <strong>1. juni 2027</strong>.
+        </p>
+      </div>
+
+      <!-- Suksess-melding (skjult til innsending) -->
+      <div class="form-success" id="formSuccess" hidden>
+        <div class="form-success__icon">💌</div>
+        <h2>Takk for påmeldingen!</h2>
+        <p>Vi gleder oss til å se deg i Loshavn.</p>
+        <a href="index.html" class="btn btn--primary">Tilbake til forsiden</a>
+      </div>
+
+      <!-- Selve skjemaet -->
+      <form class="rsvp-form" id="rsvpForm" novalidate>
+
+        <!-- Navn -->
+        <div class="field">
+          <label class="field__label" for="name">Ditt fulle navn <span aria-hidden="true">*</span></label>
+          <input
+            class="field__input"
+            type="text"
+            id="name"
+            name="Navn"
+            placeholder="Fornavn Etternavn"
+            required
+            autocomplete="name"
+          />
+          <span class="field__error" id="nameError">Vennligst oppgi navn.</span>
+        </div>
+
+        <!-- Følge -->
+        <div class="field">
+          <label class="field__checkbox">
+            <input type="checkbox" id="hasGuest" name="Tar med følge" value="Ja" />
+            <span class="field__checkbox-label">Jeg tar med følge</span>
+          </label>
+        </div>
+
+        <div class="field field--guest" id="guestNameField" hidden>
+          <label class="field__label" for="guestName">Navn på følge <span aria-hidden="true">*</span></label>
+          <input
+            class="field__input"
+            type="text"
+            id="guestName"
+            name="Navn på følge"
+            placeholder="Fornavn Etternavn"
+            autocomplete="off"
+          />
+          <span class="field__error" id="guestError">Vennligst oppgi navn på følge.</span>
+        </div>
+
+        <!-- Allergier -->
+        <fieldset class="field field--fieldset">
+          <legend class="field__label">Allergier eller matpreferanser</legend>
+
+          <div class="field field--inline">
+            <label class="field__label field__label--small" for="allergyCount">
+              Antall personer med allergi / preferanse
+            </label>
+            <select class="field__select" id="allergyCount" name="Antall med allergi">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3+</option>
+            </select>
+          </div>
+
+          <div class="field" id="allergyDetailField" hidden>
+            <label class="field__label field__label--small" for="allergyDetail">
+              Beskriv allergi / preferanse
+            </label>
+            <textarea
+              class="field__textarea"
+              id="allergyDetail"
+              name="Allergi og preferanser"
+              rows="3"
+              placeholder="F.eks. glutenallergi, laktoseintoleranse, vegetar …"
+            ></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Kommentar -->
+        <div class="field">
+          <label class="field__label field__label--small" for="comment">
+            Kommentar (valgfritt)
+          </label>
+          <textarea
+            class="field__textarea"
+            id="comment"
+            name="Kommentar"
+            rows="3"
+            placeholder="Andre ting vi bør vite om?"
+          ></textarea>
+        </div>
+
+        <button class="btn btn--primary btn--full" type="submit" id="submitBtn">
+          Send påmelding
+        </button>
+
+        <p class="form-note">* Obligatoriske felt</p>
+      </form>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Ingrid &amp; Herman · 3. juli 2027 · Loshavn</p>
+  </footer>
+
+  <script src="js/paamelding.js"></script>
+</body>
+</html>

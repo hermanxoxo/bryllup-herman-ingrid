@@ -507,6 +507,74 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* ===========================
+   PÅMELDING (teaser-seksjon)
+   =========================== */
+.rsvp-teaser { background: var(--brown-dark); }
+
+.rsvp-teaser__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.rsvp-teaser__text {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.rsvp-teaser__text .section__title {
+  color: var(--white);
+}
+
+.rsvp-teaser__text p {
+  color: rgba(255,255,255,.75);
+  font-size: .97rem;
+  max-width: 460px;
+  line-height: 1.7;
+}
+
+.rsvp-teaser__deadline {
+  color: rgba(255,255,255,.6) !important;
+  font-size: .88rem !important;
+}
+
+.rsvp-teaser__deadline strong {
+  color: rgba(255,255,255,.9);
+}
+
+.btn-rsvp {
+  display: inline-block;
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .85rem 2.2rem;
+  border-radius: 50px;
+  border: 2px solid var(--white);
+  color: var(--brown-dark);
+  background: var(--white);
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn-rsvp:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .rsvp-teaser__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-rsvp { width: 100%; text-align: center; }
+}
+
+/* ===========================
    FOOTER
    =========================== */
 .footer {

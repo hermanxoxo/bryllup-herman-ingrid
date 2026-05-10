@@ -1,0 +1,227 @@
+/* ===========================
+   PÅMELDINGSSIDE
+   =========================== */
+
+body.form-page {
+  background: var(--beige);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.form-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--beige);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form-header__back {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--brown);
+  text-decoration: none;
+  letter-spacing: .03em;
+  transition: color var(--transition);
+}
+
+.form-header__back:hover { color: var(--brown-dark); }
+
+.form-header__title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--text-light);
+}
+
+/* Main layout */
+.form-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1rem 4rem;
+}
+
+.form-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: min(600px, 100%);
+  padding: 2.5rem 2.5rem 3rem;
+}
+
+/* Intro */
+.form-intro {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.form-intro p {
+  color: var(--text-light);
+  font-size: .97rem;
+  line-height: 1.7;
+}
+
+.form-intro strong { color: var(--brown-dark); }
+
+/* Suksess */
+.form-success {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-success__icon { font-size: 3rem; }
+.form-success h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--brown-dark);
+}
+.form-success p { color: var(--text-light); }
+
+/* Felter */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-bottom: 1.4rem;
+}
+
+.field--fieldset {
+  border: 1px solid var(--beige);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.2rem 1rem;
+  gap: .8rem;
+}
+
+.field__label {
+  font-size: .87rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  color: var(--brown-dark);
+}
+
+.field__label--small {
+  font-size: .83rem;
+  color: var(--text-light);
+}
+
+.field__label span { color: var(--terra); }
+
+.field__input,
+.field__textarea,
+.field__select {
+  font-family: var(--font-sans);
+  font-size: .97rem;
+  color: var(--text);
+  background: var(--cream);
+  border: 1.5px solid var(--beige);
+  border-radius: 8px;
+  padding: .65rem .9rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+
+.field__input:focus,
+.field__textarea:focus,
+.field__select:focus {
+  outline: none;
+  border-color: var(--brown);
+  box-shadow: 0 0 0 3px rgba(122,100,72,.12);
+}
+
+.field__input.error,
+.field__textarea.error { border-color: #c0392b; }
+
+.field__textarea { resize: vertical; min-height: 80px; }
+
+.field__select { cursor: pointer; }
+
+/* Feilmeldinger */
+.field__error {
+  font-size: .8rem;
+  color: #c0392b;
+  display: none;
+}
+
+.field__error.visible { display: block; }
+
+/* Avkrysning */
+.field__checkbox {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.field__checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brown);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.field__checkbox-label {
+  font-size: .97rem;
+  color: var(--text);
+}
+
+/* Knapper */
+.btn {
+  font-family: var(--font-sans);
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .75rem 2rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn--primary {
+  background: var(--brown);
+  border-color: var(--brown);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--brown-dark);
+  border-color: var(--brown-dark);
+}
+
+.btn--primary:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.btn--full { width: 100%; margin-top: .5rem; }
+
+/* Notat */
+.form-note {
+  text-align: center;
+  font-size: .78rem;
+  color: var(--text-light);
+  margin-top: .75rem;
+}
+
+/* Responsiv */
+@media (max-width: 640px) {
+  .form-card { padding: 1.75rem 1.25rem 2rem; }
+  .form-header__title { display: none; }
+}
