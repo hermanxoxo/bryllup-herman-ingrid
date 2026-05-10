@@ -6,11 +6,33 @@
   <title>Påmelding – Ingrid &amp; Herman</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/paamelding.css" />
+  <link rel="stylesheet" href="css/passord.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 </head>
 <body class="form-page">
+
+  <!-- Passord-overlay -->
+  <div class="passord-overlay" id="passordOverlay">
+    <div class="passord-kort">
+      <div class="passord-logo">💌</div>
+      <h1 class="passord-tittel">Ingrid &amp; Herman</h1>
+      <p class="passord-tekst">Skriv inn koden du har fått for å se siden.</p>
+      <div class="passord-felt-wrap">
+        <input
+          class="passord-felt"
+          id="passordFelt"
+          type="password"
+          placeholder="Kode"
+          autocomplete="off"
+          autofocus
+        />
+        <button class="passord-knapp" id="passordKnapp">Gå inn</button>
+      </div>
+      <p class="passord-feil" id="passordFeil">Feil kode. Prøv igjen.</p>
+    </div>
+  </div>
 
   <header class="form-header">
     <a href="index.html" class="form-header__back">← Tilbake</a>
@@ -136,5 +158,6 @@
   </footer>
 
   <script src="js/paamelding.js"></script>
+  <script src="js/passord.js"></script>
 </body>
 </html>
