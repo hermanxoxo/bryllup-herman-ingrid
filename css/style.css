@@ -291,7 +291,8 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===========================
    HOTELL
    =========================== */
-.hotel { background: var(--cream); }
+.hotel { background: var(--cream); padding-bottom: 80px; }
+.hotel .section__title { margin-bottom: 0; }
 
 .hotel__card {
   background: var(--white);
@@ -372,11 +373,12 @@ img { display: block; max-width: 100%; height: auto; }
 .hotel__logo-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-top: .5rem;
+  margin-bottom: 1.25rem;
 }
 
 .hotel__logo {
-  max-width: 220px;
+  max-width: 280px;
   height: auto;
   opacity: .75;
   transition: opacity var(--transition);
