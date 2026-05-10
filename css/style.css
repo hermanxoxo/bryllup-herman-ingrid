@@ -171,6 +171,15 @@ img { display: block; max-width: 100%; height: auto; }
   text-align: center;
 }
 
+.day-panel__intro {
+  color: var(--text);
+  font-size: .97rem;
+  line-height: 1.75;
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
 /* Tidslinje */
 .schedule {
   list-style: none;
