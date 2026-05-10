@@ -372,13 +372,11 @@ img { display: block; max-width: 100%; height: auto; }
 .hotel__logo-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--beige);
+  margin-bottom: 2rem;
 }
 
 .hotel__logo {
-  max-width: 180px;
+  max-width: 220px;
   height: auto;
   opacity: .75;
   transition: opacity var(--transition);
