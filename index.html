@@ -37,11 +37,14 @@
        Hero-bilde: images/Banner.png (akvarell-banner med Loshavn, Ingrid og Herman)
        Bytt filnavn her for å bruke et annet hero-bilde -->
   <section class="hero">
-    <img
-      class="hero__bg"
-      src="images/Banner3.png"
-      alt="Ingrid og Herman gifter seg – Loshavn 7. august 2027"
-    />
+    <picture>
+      <source media="(max-width: 640px)" srcset="images/gemini1.png" />
+      <img
+        class="hero__bg"
+        src="images/gemini2.png"
+        alt="Ingrid og Herman gifter seg – Loshavn 7. august 2027"
+      />
+    </picture>
     <div class="hero__overlay"></div>
     <a href="#program" class="hero__scroll" aria-label="Scroll til program">
       <span class="hero__scroll-icon">↓</span>
@@ -201,33 +204,6 @@
             Bruk kode <strong>XXX</strong> for å booke rom til avtalt gruppepris.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= ØNSKELISTE ======= -->
-  <section class="section wishes" id="onskeliste">
-    <div class="container">
-      <h2 class="section__title">Ønskeliste</h2>
-      <p class="section__subtitle">Det viktigste er at du er der!</p>
-      <p class="wishes__intro">
-        Din tilstedeværelse er det fineste du kan gi oss. Ønsker du likevel å
-        gi en gave, setter vi stor pris på ett av følgende:
-      </p>
-      <div class="wishes__grid">
-
-        <div class="wish-card">
-          <div class="wish-card__icon">✈️</div>
-          <h3>Bidrag til bryllupsreisen</h3>
-          <p>Hjelp oss å skape uforglemmelige minner på vår første reise som gift par.</p>
-          <div class="wish-card__account">
-            <span class="wish-card__account-label">Kontonummer</span>
-            <!-- Bytt ut kontonummeret nedenfor med ditt eget -->
-            <span class="wish-card__account-number">XXXX XX XXXXX</span>
-          </div>
-          <p class="wish-card__note">Merk overføringen: <em>Bryllupsreise</em></p>
-        </div>
-
       </div>
     </div>
   </section>
