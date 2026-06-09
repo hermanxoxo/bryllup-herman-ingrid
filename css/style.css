@@ -310,14 +310,14 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===========================
    HOTELL
    =========================== */
-.hotel { background: var(--cream); padding: 56px 0; }
+.hotel { background: var(--cream); padding: 36px 0; }
 .hotel .section__title { margin-bottom: 0; }
 
 .hotel__card {
   background: var(--white);
   border: 1px solid var(--beige);
   border-radius: var(--radius);
-  padding: 2rem 2.5rem;
+  padding: 1.25rem 2rem;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 2rem;
@@ -392,8 +392,8 @@ img { display: block; max-width: 100%; height: auto; }
 .hotel__logo-wrap {
   display: flex;
   justify-content: center;
-  margin-top: .25rem;
-  margin-bottom: .75rem;
+  margin-top: .1rem;
+  margin-bottom: .4rem;
 }
 
 .hotel__logo {
