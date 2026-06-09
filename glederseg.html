@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vi gleder oss! – Ingrid &amp; Herman</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/passord.css" />
+</head>
+<body>
+
+  <!-- Passord-overlay -->
+  <div class="passord-overlay" id="passordOverlay">
+    <div class="passord-kort">
+      <div class="passord-logo">💌</div>
+      <h1 class="passord-tittel">Ingrid &amp; Herman</h1>
+      <p class="passord-tekst">Skriv inn koden du har fått for å se siden.</p>
+      <div class="passord-felt-wrap">
+        <input
+          class="passord-felt"
+          id="passordFelt"
+          type="password"
+          placeholder="Kode"
+          autocomplete="off"
+          autofocus
+        />
+        <button class="passord-knapp" id="passordKnapp">Gå inn</button>
+      </div>
+      <p class="passord-feil" id="passordFeil">Feil kode. Prøv igjen.</p>
+    </div>
+  </div>
+
+  <!-- ======= HERO ======= -->
+  <section class="gs-hero">
+    <div class="container">
+      <h1 class="gs-hero__title">Vi gleder oss! 🎉</h1>
+      <p class="gs-hero__sub">
+        Send en hilsen og et bilde til brudeparet og de andre gjestene.
+      </p>
+      <a href="index.html" class="gs-hero__back">← Tilbake til bryllupssiden</a>
+    </div>
+  </section>
+
+  <!-- ======= SKJEMA ======= -->
+  <section class="section gs-form-section">
+    <div class="container">
+      <h2 class="section__title">Send en hilsen</h2>
+      <form id="gs-form" class="gs-form" novalidate>
+        <div>
+          <label class="gs-form__label" for="gs-navn">Navn *</label>
+          <input
+            class="gs-form__input"
+            id="gs-navn"
+            type="text"
+            placeholder="Ditt navn"
+            required
+            autocomplete="name"
+          />
+        </div>
+        <div>
+          <label class="gs-form__label" for="gs-hilsen">Hilsen</label>
+          <textarea
+            class="gs-form__textarea"
+            id="gs-hilsen"
+            placeholder="Skriv en kort hilsen til brudeparet (valgfritt)"
+          ></textarea>
+        </div>
+        <div>
+          <label class="gs-form__label" for="gs-bilde">Bilde (valgfritt)</label>
+          <input class="gs-form__file" id="gs-bilde" type="file" accept="image/*" />
+          <div id="gs-preview-wrap" class="gs-preview-wrap" style="display:none;">
+            <img id="gs-preview" class="gs-preview-img" alt="Forhåndsvisning" />
+          </div>
+        </div>
+        <p class="gs-form__status" id="gs-status" aria-live="polite"></p>
+        <button class="gs-form__submit" id="gs-submit" type="submit">Send hilsen</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======= HILSEN-FEED ======= -->
+  <section class="section gs-feed-section">
+    <div class="container gs-feed-container">
+      <h2 class="section__title">Hilsener fra gjestene</h2>
+      <div id="gs-grid" class="gs-grid">
+        <p class="gs-empty">Laster hilsener…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <p>Ingrid &amp; Herman · 7. august 2027 · Loshavn</p>
+    <p class="footer__small">Med glede &amp; kjærlighet</p>
+  </footer>
+
+  <script src="js/passord.js"></script>
+
+  <script type="module">
+    import { initializeApp }       from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, deleteDoc,
+             doc, query, orderBy, onSnapshot,
+             serverTimestamp }      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey:            "AIzaSyB1k39b9Xj7wUjK-U0rBIxF2uFZ1D2twMc",
+      authDomain:        "bryllup-herman-og-ingrid.firebaseapp.com",
+      projectId:         "bryllup-herman-og-ingrid",
+      storageBucket:     "bryllup-herman-og-ingrid.firebasestorage.app",
+      messagingSenderId: "811626523185",
+      appId:             "1:811626523185:web:8f1624fdebe1f3feb50310"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getFirestore(app);
+
+    /* ---- Bilde-forhåndsvisning ---- */
+    const bildeInput  = document.getElementById("gs-bilde");
+    const previewWrap = document.getElementById("gs-preview-wrap");
+    const previewImg  = document.getElementById("gs-preview");
+
+    bildeInput.addEventListener("change", () => {
+      const fil = bildeInput.files[0];
+      if (fil) {
+        previewImg.src = URL.createObjectURL(fil);
+        previewWrap.style.display = "block";
+      } else {
+        previewWrap.style.display = "none";
+      }
+    });
+
+    /* ---- Cloudinary-opplasting ---- */
+    async function lastOppBilde(fil) {
+      const fd = new FormData();
+      fd.append("file", fil);
+      fd.append("upload_preset", "bryllup_upload");
+      fd.append("folder", "bryllup");
+      const res = await fetch("https://api.cloudinary.com/v1_1/dudcfqvvo/image/upload", {
+        method: "POST",
+        body: fd
+      });
+      if (!res.ok) throw new Error("Bildeopplasting feilet");
+      return (await res.json()).secure_url;
+    }
+
+    /* ---- HTML-escape ---- */
+    function esc(str) {
+      const d = document.createElement("div");
+      d.appendChild(document.createTextNode(str));
+      return d.innerHTML;
+    }
+
+    /* ---- Bygg ett kort ---- */
+    function lagKort(docu) {
+      const d    = docu.data();
+      const kort = document.createElement("article");
+      kort.className  = "gs-card";
+      kort.dataset.id = docu.id;
+
+      const bildeHtml = d.bildeUrl
+        ? `<div class="gs-card__img-wrap">
+             <img src="${esc(d.bildeUrl)}" alt="Bilde fra ${esc(d.navn)}"
+                  class="gs-card__img" loading="lazy" />
+           </div>`
+        : "";
+
+      const hilsenHtml = d.hilsen
+        ? `<p class="gs-card__hilsen">"${esc(d.hilsen)}"</p>`
+        : "";
+
+      kort.innerHTML = `
+        ${bildeHtml}
+        <div class="gs-card__body">
+          <p class="gs-card__navn">${esc(d.navn)}</p>
+          ${hilsenHtml}
+        </div>
+        <button class="gs-card__slett" aria-label="Slett innlegg" title="Slett">🗑</button>
+      `;
+
+      kort.querySelector(".gs-card__slett").addEventListener("click", () => {
+        deleteDoc(doc(db, "glederseg", docu.id));
+      });
+
+      return kort;
+    }
+
+    /* ---- Sanntidslytter ---- */
+    const q = query(collection(db, "glederseg"), orderBy("opprettet", "desc"));
+    onSnapshot(q, (snapshot) => {
+      const grid = document.getElementById("gs-grid");
+      grid.innerHTML = "";
+      if (snapshot.empty) {
+        grid.innerHTML = '<p class="gs-empty">Ingen hilsener ennå – vær den første!</p>';
+        return;
+      }
+      snapshot.forEach(docu => grid.appendChild(lagKort(docu)));
+    });
+
+    /* ---- Skjema-innsending ---- */
+    const form      = document.getElementById("gs-form");
+    const submitBtn = document.getElementById("gs-submit");
+    const statusEl  = document.getElementById("gs-status");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const navn = document.getElementById("gs-navn").value.trim();
+      if (!navn) {
+        document.getElementById("gs-navn").focus();
+        return;
+      }
+
+      submitBtn.disabled    = true;
+      submitBtn.textContent = "Sender…";
+      statusEl.textContent  = "";
+
+      try {
+        let bildeUrl = null;
+        const fil = bildeInput.files[0];
+        if (fil) {
+          statusEl.textContent = "Laster opp bilde…";
+          bildeUrl = await lastOppBilde(fil);
+        }
+
+        const hilsen = document.getElementById("gs-hilsen").value.trim();
+        await addDoc(collection(db, "glederseg"), {
+          navn,
+          hilsen,
+          bildeUrl,
+          opprettet: serverTimestamp()
+        });
+
+        form.reset();
+        previewWrap.style.display = "none";
+        statusEl.textContent = "Hilsenen er sendt! 🎉";
+        setTimeout(() => { statusEl.textContent = ""; }, 4000);
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = "Noe gikk galt. Prøv igjen.";
+      } finally {
+        submitBtn.disabled    = false;
+        submitBtn.textContent = "Send hilsen";
+      }
+    });
+  </script>
+
+</body>
+</html>

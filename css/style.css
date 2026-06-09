@@ -736,3 +736,272 @@ img { display: block; max-width: 100%; height: auto; }
   /* Ønskeliste: én kolonne */
   .wishes__grid { grid-template-columns: 1fr; }
 }
+
+/* ===========================
+   GLEDER SEG – TEASER (index.html)
+   =========================== */
+.gs-link-teaser { background: var(--beige); }
+
+.gs-link-teaser__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.gs-link-teaser p {
+  color: var(--text-light);
+  font-size: .97rem;
+  max-width: 460px;
+  line-height: 1.7;
+  margin-top: .5rem;
+}
+
+.btn-gs {
+  display: inline-block;
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .85rem 2.2rem;
+  border-radius: 50px;
+  border: 2px solid var(--brown);
+  color: var(--brown);
+  background: transparent;
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn-gs:hover {
+  background: var(--brown);
+  color: var(--white);
+}
+
+/* ===========================
+   GLEDER SEG – SIDE (glederseg.html)
+   =========================== */
+.gs-hero {
+  background: var(--beige);
+  text-align: center;
+  padding: 5rem 1rem 3.5rem;
+}
+
+.gs-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: .5rem;
+}
+
+.gs-hero__sub {
+  color: var(--text-light);
+  font-size: 1rem;
+  max-width: 420px;
+  margin: 0 auto .75rem;
+  line-height: 1.65;
+}
+
+.gs-hero__back {
+  display: inline-block;
+  margin-top: .25rem;
+  font-size: .88rem;
+  color: var(--brown);
+  text-decoration: none;
+  opacity: .75;
+  transition: opacity var(--transition);
+}
+
+.gs-hero__back:hover { opacity: 1; }
+
+.gs-form-section { background: var(--cream); }
+
+.gs-form {
+  background: var(--white);
+  border: 1px solid var(--beige);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 540px;
+  margin: 2rem auto 0;
+}
+
+.gs-form__label {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: .35rem;
+}
+
+.gs-form__input,
+.gs-form__textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: .97rem;
+  padding: .7rem 1rem;
+  border: 1.5px solid var(--beige);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.gs-form__input:focus,
+.gs-form__textarea:focus { border-color: var(--brown); }
+
+.gs-form__textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.6;
+}
+
+.gs-form__file {
+  font-size: .9rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.gs-preview-wrap { margin-top: .75rem; }
+
+.gs-preview-img {
+  max-height: 200px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.gs-form__status {
+  font-size: .9rem;
+  color: var(--terra);
+  min-height: 1.2em;
+}
+
+.gs-form__submit {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--brown);
+  color: var(--white);
+  cursor: pointer;
+  transition: background var(--transition);
+  align-self: flex-start;
+}
+
+.gs-form__submit:hover    { background: var(--brown-dark); }
+.gs-form__submit:disabled { opacity: .6; cursor: not-allowed; }
+
+.gs-feed-section { background: var(--beige); }
+
+.gs-feed-container { width: min(960px, 92%); }
+
+.gs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.gs-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.gs-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(61,47,30,.16);
+}
+
+.gs-card__img-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.gs-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.gs-card:hover .gs-card__img { transform: scale(1.04); }
+
+.gs-card__body {
+  padding: 1.1rem 1.2rem 2.75rem;
+  flex: 1;
+}
+
+.gs-card__navn {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: .3rem;
+}
+
+.gs-card__hilsen {
+  font-size: .88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.gs-card__slett {
+  position: absolute;
+  bottom: .65rem;
+  right: .75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: .3;
+  transition: opacity var(--transition);
+  padding: .2rem;
+  line-height: 1;
+}
+
+.gs-card__slett:hover { opacity: .75; }
+
+.gs-empty {
+  text-align: center;
+  color: var(--text-light);
+  font-style: italic;
+  grid-column: 1 / -1;
+  padding: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .gs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .gs-link-teaser__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-gs { width: 100%; text-align: center; }
+
+  .gs-hero { padding: 3.5rem 1rem 2.5rem; }
+  .gs-form { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .gs-grid { grid-template-columns: 1fr; }
+}
