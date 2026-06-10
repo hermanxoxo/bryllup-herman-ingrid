@@ -18,14 +18,3 @@ tabs.forEach(tab => {
     if (activePanel) activePanel.classList.add('day-panel--active');
   });
 });
-
-// Kopier rabattkode til utklippstavlen
-function copyCode() {
-  const code = document.getElementById('hotelCode').textContent.trim();
-  const confirm = document.getElementById('copyConfirm');
-
-  navigator.clipboard.writeText(code).then(() => {
-    confirm.classList.add('visible');
-    setTimeout(() => confirm.classList.remove('visible'), 2000);
-  });
-}

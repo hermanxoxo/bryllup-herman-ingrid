@@ -181,7 +181,24 @@
       `;
 
       kort.querySelector(".gs-card__slett").addEventListener("click", () => {
-        deleteDoc(doc(db, "glederseg", docu.id));
+        const slettKnapp = kort.querySelector(".gs-card__slett");
+
+        const bekreft = document.createElement("div");
+        bekreft.className = "gs-card__slett-bekreft";
+        bekreft.innerHTML = `
+          <span class="gs-card__slett-tekst">Slette?</span>
+          <button class="gs-card__slett-ja">Ja</button>
+          <button class="gs-card__slett-nei">Avbryt</button>
+        `;
+        slettKnapp.replaceWith(bekreft);
+
+        bekreft.querySelector(".gs-card__slett-ja").addEventListener("click", () => {
+          deleteDoc(doc(db, "glederseg", docu.id));
+        });
+
+        bekreft.querySelector(".gs-card__slett-nei").addEventListener("click", () => {
+          bekreft.replaceWith(slettKnapp);
+        });
       });
 
       return kort;

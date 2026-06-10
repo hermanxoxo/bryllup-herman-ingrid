@@ -80,6 +80,15 @@ img { display: block; max-width: 100%; height: auto; }
   margin: 0 auto;
 }
 
+@media (max-width: 640px) {
+  .hero__bg {
+    height: 75vw;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 
 
 .hero__overlay {
@@ -318,10 +327,6 @@ img { display: block; max-width: 100%; height: auto; }
   border: 1px solid var(--beige);
   border-radius: var(--radius);
   padding: 1.25rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2rem;
-  align-items: center;
   box-shadow: var(--shadow);
 }
 
@@ -707,7 +712,7 @@ img { display: block; max-width: 100%; height: auto; }
    RESPONSIV – MOBIL
    =========================== */
 @media (max-width: 640px) {
-  .section { padding: 56px 0; }
+  .section { padding: 48px 0; }
 
   .tabs { gap: .5rem; }
   .tab  { font-size: .8rem; padding: .45rem 1rem; }
@@ -978,6 +983,47 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .gs-card__slett:hover { opacity: .75; }
+
+.gs-card__slett-bekreft {
+  position: absolute;
+  bottom: .6rem;
+  right: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.gs-card__slett-tekst {
+  font-size: .78rem;
+  color: var(--text-light);
+}
+
+.gs-card__slett-ja,
+.gs-card__slett-nei {
+  font-family: var(--font-sans);
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .2rem .55rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.gs-card__slett-ja {
+  background: #c0392b;
+  border: 1px solid #c0392b;
+  color: #fff;
+}
+
+.gs-card__slett-ja:hover { background: #a93226; border-color: #a93226; }
+
+.gs-card__slett-nei {
+  background: transparent;
+  border: 1px solid var(--beige);
+  color: var(--text-light);
+}
+
+.gs-card__slett-nei:hover { border-color: var(--brown); color: var(--brown); }
 
 .gs-empty {
   text-align: center;
