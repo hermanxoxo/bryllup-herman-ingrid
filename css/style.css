@@ -32,6 +32,10 @@ body {
 
 img { display: block; max-width: 100%; height: auto; }
 
+/* Kodestyrt innhold: skjult til js/passord.js fjerner data-kode på
+   elementene som hører til varianten gjesten har låst opp. */
+[data-kode] { display: none; }
+
 /* ===========================
    FELLES SEKSJONER
    =========================== */
