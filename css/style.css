@@ -415,6 +415,13 @@ img { display: block; max-width: 100%; height: auto; }
 
 .hotel__logo:hover { opacity: 1; }
 
+/* Farsund Resort-logoen er kvadratisk med egen bakgrunn – vises mindre og med rundede hjørner */
+.hotel__logo--resort {
+  max-width: 200px;
+  border-radius: var(--radius);
+  opacity: 1;
+}
+
 /* ===========================
    ØNSKELISTE
    =========================== */
