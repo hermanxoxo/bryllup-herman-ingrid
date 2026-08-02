@@ -324,7 +324,7 @@ img { display: block; max-width: 100%; height: auto; }
    HOTELL
    =========================== */
 .hotel { background: var(--cream); padding: 36px 0; }
-.hotel .section__title { margin-bottom: 0; }
+.hotel .section__title { margin-bottom: 64px; }
 
 .hotel__card {
   background: var(--white);
@@ -401,13 +401,15 @@ img { display: block; max-width: 100%; height: auto; }
 .hotel__logo-wrap {
   display: flex;
   justify-content: center;
-  margin-top: .1rem;
-  margin-bottom: .4rem;
+  margin-top: 0;
+  margin-bottom: 27px;
 }
 
+/* Logofilene brukes beskåret (images/*_cropped.png) slik at bildekanten
+   følger den synlige logoen tett – ingen transparent luft å kompensere for. */
 .hotel__logo {
-  max-width: 400px;
-  width: 90%;
+  width: 365px;
+  max-width: 90%;
   height: auto;
   opacity: .75;
   transition: opacity var(--transition);
@@ -415,12 +417,40 @@ img { display: block; max-width: 100%; height: auto; }
 
 .hotel__logo:hover { opacity: 1; }
 
-/* Farsund Resort-logoen er kvadratisk med egen bakgrunn – vises mindre og med rundede hjørner */
 .hotel__logo--resort {
-  max-width: 200px;
-  border-radius: var(--radius);
+  width: 210px;
+  max-width: 90%;
+  height: auto;
   opacity: 1;
 }
+
+/* Rederiet: logo rett over tekstboksen, som én samlet presentasjon.
+   Skjermet bak #hotell / .hotel__card--rederiet slik at
+   Farsund Resort-seksjonen (samme baseklasser) ikke berøres. */
+#hotell .section__title { margin-bottom: 40px; }
+#hotell { padding-bottom: 16px; }
+
+#hotell .hotel__logo-wrap { margin-top: 0; margin-bottom: 44px; }
+#hotell .hotel__logo { width: 320px; }
+
+.hotel__card--rederiet {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 2rem 2.75rem;
+  text-align: left;
+}
+
+.hotel__card--rederiet .hotel__text p { line-height: 1.7; }
+
+.hotel__booking-code {
+  padding-top: 14px;
+  border-top: 1px solid var(--beige);
+}
+
+/* Farsund Resort: mindre logo, jevnere avstand Overnatting → logo → boks. */
+#hotell-resort .section__title { margin-bottom: 40px; }
+#hotell-resort .hotel__logo-wrap { margin-bottom: 34px; }
+#hotell-resort .hotel__logo--resort { width: 175px; }
 
 /* ===========================
    TOASTMASTER
@@ -801,12 +831,30 @@ img { display: block; max-width: 100%; height: auto; }
   .couple__sig  { text-align: center; }
 
   /* Hotell: stables */
+  .hotel .section__title { margin-bottom: 41px; }
+
+  .hotel__logo-wrap { margin-bottom: 18px; }
+  .hotel__logo { width: 285px; }
+  .hotel__logo--resort { width: 175px; }
+
   .hotel__card {
     grid-template-columns: 1fr;
     padding: 1.5rem;
     text-align: center;
   }
   .hotel__code-wrap { width: 100%; }
+
+  #hotell .hotel__logo-wrap { margin-bottom: 30px; }
+  #hotell .hotel__logo { width: 250px; }
+
+  .hotel__card--rederiet {
+    padding: 20px;
+    text-align: left;
+  }
+
+  #hotell-resort .section__title { margin-bottom: 28px; }
+  #hotell-resort .hotel__logo-wrap { margin-bottom: 24px; }
+  #hotell-resort .hotel__logo--resort { width: 145px; }
 
   /* Ønskeliste: én kolonne */
   .wishes__grid { grid-template-columns: 1fr; }

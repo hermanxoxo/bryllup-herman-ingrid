@@ -75,10 +75,13 @@ body.form-page {
 .form-success {
   text-align: center;
   padding: 2rem 0 1rem;
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+.form-success:not([hidden]) {
+  display: flex;
 }
 
 .form-success__icon { font-size: 3rem; }
