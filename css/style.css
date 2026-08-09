@@ -1252,3 +1252,72 @@ img { display: block; max-width: 100%; height: auto; }
   .moodboard__grid { grid-template-columns: 1fr; }
   .moodboard-kort__img { height: 260px; }
 }
+
+/* ===========================
+   RESPONSIV – DESKTOP (kompakt/raffinert)
+   Gjelder kun store skjermer. Mobil (<=640px) og tablet (641–1099px)
+   beholder dagens design uendret.
+   =========================== */
+@media (min-width: 1100px) {
+
+  /* 1. Generell layout: innholdet bruker desktopbredden bedre */
+  .container { width: min(1100px, 90%); }
+
+  /* 2. Vertikal luft: mindre seksjonspadding (80px → 64px, -20%) */
+  .section { padding: 64px 0; }
+
+  /* 3. Typografi: mindre, mer raffinerte overskrifter (-14%) */
+  .section__title { font-size: 2.4rem; }
+  .section__subtitle { margin-bottom: 1.9rem; }
+
+  /* 4. Hero: mindre dominerende høyde */
+  .hero__bg {
+    height: 78vh;
+    min-height: 620px;
+    max-height: 780px;
+  }
+
+  /* 5. Program: smalere/mer lesbar tekstbredde, mindre luft rundt tittel */
+  .program .container { max-width: 920px; }
+  .program__intro { margin-bottom: .7rem; }
+  .program__intro + .tabs { margin-top: 1.6rem; }
+  .tabs { margin-bottom: 1.6rem; }
+  .day-panel__date { margin-bottom: 1.2rem; }
+  .day-panel__intro { margin-bottom: .8rem; }
+
+  /* 6. Paret: litt smalere/mer balansert enn full container */
+  .couple__inner { max-width: 980px; margin-inline: auto; gap: 2.5rem; }
+
+  /* 7. Overnatting: mindre luft, litt bredere/lavere infokort */
+  .hotel { padding: 28px 0; }
+  .hotel .section__title { margin-bottom: 48px; }
+  #hotell .section__title { margin-bottom: 30px; }
+  #hotell .hotel__logo-wrap { margin-bottom: 33px; }
+  #hotell-resort .section__title { margin-bottom: 30px; }
+  #hotell-resort .hotel__logo-wrap { margin-bottom: 26px; }
+
+  .hotel__card {
+    max-width: 820px;
+    margin-inline: auto;
+    padding: 1.1rem 1.9rem;
+  }
+  .hotel__card--rederiet {
+    max-width: 820px;
+    padding: 1.6rem 2.35rem;
+  }
+
+  /* 8. Ting å gjøre: bredere grid, litt lavere kort */
+  .aktiviteter .container { max-width: 1060px; }
+  .aktiviteter__intro { margin-bottom: 1.9rem; }
+  .aktiviteter__grid { gap: 22px; }
+  .aktivitet-kort { padding: 1.3rem 1.2rem; }
+
+  /* 9. Toastmaster: smalere container, lavere kort */
+  .toastmaster .container { max-width: 760px; }
+  .toastmaster__intro { margin-bottom: 1.5rem; }
+  .toastmaster__kort { padding: 1.15rem 1.5rem; }
+
+  /* 10. Påmelding / Del din glede / Footer: strammere, men fortsatt tydelig CTA */
+  .rsvp-teaser__text { gap: .6rem; }
+  .footer { padding: 2rem 1rem; }
+}
