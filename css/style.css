@@ -267,6 +267,13 @@ img { display: block; max-width: 100%; height: auto; }
   flex-shrink: 0;
 }
 
+.schedule__icon--flag svg {
+  display: block;
+  width: 1.15em;
+  height: auto;
+  border-radius: 2px;
+}
+
 .schedule__info span {
   font-size: .9rem;
   color: var(--text-light);
