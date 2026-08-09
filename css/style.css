@@ -69,27 +69,29 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===========================
    HERO
    =========================== */
-/* Hero desktop: naturlig bredde, ingen zoom */
 .hero {
   position: relative;
-  width: 100%;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
   background: #FCFAF6;
 }
 
 .hero__bg {
   display: block;
   width: 100%;
-  max-width: 1600px;
-  height: auto;
-  margin: 0 auto;
+  height: 90vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 640px) {
   .hero__bg {
     height: 75vw;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 }
 
@@ -284,6 +286,20 @@ img { display: block; max-width: 100%; height: auto; }
   font-style: italic;
   color: var(--brown) !important;
 }
+
+.schedule__link {
+  display: inline-block;
+  width: fit-content;
+  margin-top: .15rem;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--brown);
+  text-decoration: none;
+  border-bottom: 1px solid var(--brown);
+  transition: opacity var(--transition);
+}
+
+.schedule__link:hover { opacity: .65; }
 
 /* ===========================
    PARET
@@ -1175,4 +1191,64 @@ img { display: block; max-width: 100%; height: auto; }
 
 @media (max-width: 480px) {
   .gs-grid { grid-template-columns: 1fr; }
+}
+
+/* ===========================
+   MOODBOARD – SIDE (moodboard.html)
+   =========================== */
+.moodboard-section { background: var(--cream); }
+
+.moodboard__intro {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-light);
+  font-size: .97rem;
+  line-height: 1.75;
+}
+
+.moodboard__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.moodboard-kort {
+  background: var(--white);
+  border: 1px solid var(--beige);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.moodboard-kort--wide { grid-column: 1 / -1; }
+
+.moodboard-kort__img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.moodboard-kort__body { padding: 1.4rem 1.5rem 1.6rem; }
+
+.moodboard-kort__tittel {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: .5rem;
+}
+
+.moodboard-kort__tekst {
+  font-size: .92rem;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .moodboard__grid { grid-template-columns: 1fr; }
+  .moodboard-kort__img { height: 260px; }
 }

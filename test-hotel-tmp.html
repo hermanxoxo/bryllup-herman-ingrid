@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <section class="section hotel" id="hotell">
+    <div class="container">
+      <h2 class="section__title">Overnatting</h2>
+      <div class="hotel__logo-wrap">
+        <img src="images/Logo_rederiet.png" alt="Rederiet Hotell" class="hotel__logo" />
+      </div>
+      <div class="hotel__card">
+        <div class="hotel__text">
+          <p>
+            Rederiet Hotell er avholdt for booking av hotellrom til bryllupshelgen.
+            Hotellet ligger i hjertet av Farsund sentrum, med enkel tilgang til alle aktiviteter.
+          </p>
+          <p>
+            Bruk kode <strong>XXX</strong> for å booke rom til avtalt gruppepris.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hotel" id="hotell-resort">
+    <div class="container">
+      <h2 class="section__title">Overnatting</h2>
+      <div class="hotel__logo-wrap">
+        <img src="images/Logo_resort.png" alt="Farsund Resort" class="hotel__logo hotel__logo--resort" />
+      </div>
+      <div class="hotel__card">
+        <div class="hotel__text">
+          <p>
+            <strong>Farsund Resort</strong> er avholdt for booking av hotellrom til bryllupshelgen.
+            Her bor dere rett ved sjøen, med kort vei til aktivitetene gjennom helgen.
+          </p>
+          <p>
+            Bruk kode <strong>XXX</strong> for å booke rom til avtalt gruppepris.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <pre id="debug" style="position:fixed;top:0;left:0;right:0;background:#fff;color:#000;font-size:11px;padding:6px;z-index:999;white-space:pre-wrap;word-break:break-all;max-width:100vw;box-sizing:border-box;"></pre>
+  <script>
+    function r(sel){ const el=document.querySelector(sel); const b=el.getBoundingClientRect(); return {sel, top:Math.round(b.top), bottom:Math.round(b.bottom), left:Math.round(b.left), width:Math.round(b.width), height:Math.round(b.height)}; }
+    const imgs = [...document.querySelectorAll('img')];
+    Promise.all(imgs.map(img => img.decode().catch(()=>{}))).then(() => {
+      const out = [
+        r('.container'),
+        r('#hotell .hotel__logo-wrap img'),
+        r('#hotell .hotel__card'),
+        r('#hotell-resort .hotel__logo-wrap img'),
+        r('#hotell-resort .hotel__card'),
+      ];
+      document.getElementById('debug').textContent = out.map(o => JSON.stringify(o)).join('\n');
+    });
+  </script>
+</body>
+</html>
