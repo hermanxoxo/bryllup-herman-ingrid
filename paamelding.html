@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/passord.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 </head>
 <body class="form-page">
 
@@ -18,7 +18,7 @@
     <div class="passord-kort">
       <img src="images/Monogram_IH_2.png" alt="IH-monogram" class="passord-logo" />
       <h1 class="passord-tittel">
-        <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="passord-tittel__img" />
+        <img src="images/IngridOgHerman.png?v=2" alt="Ingrid &amp; Herman" class="passord-tittel__img" />
       </h1>
       <p class="passord-tekst">Skriv inn koden du har fått for å se siden.</p>
       <div class="passord-felt-wrap">
@@ -46,7 +46,7 @@
 
       <!-- Intro -->
       <div class="form-intro">
-        <h1 class="section__title">Påmelding til bryllup</h1>
+        <h1 class="section__title">RSVP</h1>
         <p>
           Vi er glade for at du vil feire denne dagen med oss!
           Fyll ut skjemaet nedenfor for å bekrefte din deltakelse.
@@ -69,7 +69,7 @@
 
         <!-- Navn -->
         <div class="field">
-          <label class="field__label" for="name">Ditt fulle navn <span aria-hidden="true">*</span></label>
+          <label class="field__label" for="name">Ditt / deres fulle navn <span aria-hidden="true">*</span></label>
           <input
             class="field__input"
             type="text"
@@ -82,66 +82,29 @@
           <span class="field__error" id="nameError">Vennligst oppgi navn.</span>
         </div>
 
-        <!-- Følge -->
-        <div class="field">
-          <label class="field__checkbox">
-            <input type="checkbox" id="hasGuest" name="Tar med følge" value="Ja" />
-            <span class="field__checkbox-label">Jeg tar med følge</span>
-          </label>
-        </div>
-
-        <div class="field field--guest" id="guestNameField" hidden>
-          <label class="field__label" for="guestName">Navn på følge <span aria-hidden="true">*</span></label>
-          <input
-            class="field__input"
-            type="text"
-            id="guestName"
-            name="Navn på følge"
-            placeholder="Fornavn Etternavn"
-            autocomplete="off"
-          />
-          <span class="field__error" id="guestError">Vennligst oppgi navn på følge.</span>
-        </div>
-
         <!-- Hotell -->
         <div class="field">
           <label class="field__checkbox field__checkbox--multiline">
             <input type="checkbox" id="wantsHotel" name="Ønsker hotell" value="Ja" />
             <span class="field__checkbox-label">
-              Vi har reservert rom på Rederiet Hotell til en pris på 850 kr per rom per natt. Dersom du/dere ønsker å benytte dere av dette tilbudet, vennligst kryss av.
+              Vi har reservert rom på Rederiet Hotell til 850 kr per natt. Dersom du/dere ønsker å benytte dere av hotelltilbudet, vennligst kryss av.
             </span>
           </label>
         </div>
 
         <!-- Allergier -->
-        <fieldset class="field field--fieldset">
-          <legend class="field__label">Allergier eller matpreferanser</legend>
-
-          <div class="field field--inline">
-            <label class="field__label field__label--small" for="allergyCount">
-              Antall personer med allergi / preferanse
-            </label>
-            <select class="field__select" id="allergyCount" name="Antall med allergi">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3+</option>
-            </select>
-          </div>
-
-          <div class="field" id="allergyDetailField" hidden>
-            <label class="field__label field__label--small" for="allergyDetail">
-              Beskriv allergi / preferanse
-            </label>
-            <textarea
-              class="field__textarea"
-              id="allergyDetail"
-              name="Allergi og preferanser"
-              rows="3"
-              placeholder="F.eks. glutenallergi, laktoseintoleranse, vegetar …"
-            ></textarea>
-          </div>
-        </fieldset>
+        <div class="field">
+          <label class="field__label field__label--small" for="allergyDetail">
+            Beskriv eventuelle allergier eller preferanser
+          </label>
+          <textarea
+            class="field__textarea"
+            id="allergyDetail"
+            name="Allergi og preferanser"
+            rows="3"
+            placeholder="F.eks. glutenallergi, laktoseintoleranse, vegetar …"
+          ></textarea>
+        </div>
 
         <!-- Kommentar -->
         <div class="field">
@@ -168,7 +131,7 @@
   </main>
 
   <footer class="footer">
-    <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="footer__logo" />
+    <img src="images/IngridOgHerman.png?v=2" alt="Ingrid &amp; Herman" class="footer__logo" />
     <p>7. august 2027 · Loshavn</p>
   </footer>
 

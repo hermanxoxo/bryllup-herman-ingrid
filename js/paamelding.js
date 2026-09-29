@@ -1,25 +1,6 @@
 // Google Apps Script URL – skriver direkte til Google Sheets
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzpwIHN5Jwm3eKSlXJPju1TeLAtJjVF7i16uf7ni9c2PUYr8O2OnA3H0ofE7RzBqn9p0g/exec';
 
-// Vis/skjul følge-felt
-const hasGuestCheckbox  = document.getElementById('hasGuest');
-const guestNameField    = document.getElementById('guestNameField');
-const guestNameInput    = document.getElementById('guestName');
-
-hasGuestCheckbox.addEventListener('change', () => {
-  const show = hasGuestCheckbox.checked;
-  guestNameField.hidden = !show;
-  guestNameInput.required = show;
-});
-
-// Vis/skjul allergi-detaljer basert på antall
-const allergyCount       = document.getElementById('allergyCount');
-const allergyDetailField = document.getElementById('allergyDetailField');
-
-allergyCount.addEventListener('change', () => {
-  allergyDetailField.hidden = allergyCount.value === '0';
-});
-
 // Skjema-innsending → Google Sheets
 const form        = document.getElementById('rsvpForm');
 const submitBtn   = document.getElementById('submitBtn');
@@ -42,15 +23,6 @@ form.addEventListener('submit', async (e) => {
     nameError.classList.remove('visible');
   }
 
-  if (hasGuestCheckbox.checked && !guestNameInput.value.trim()) {
-    guestNameInput.classList.add('error');
-    document.getElementById('guestError').classList.add('visible');
-    valid = false;
-  } else {
-    guestNameInput.classList.remove('error');
-    document.getElementById('guestError').classList.remove('visible');
-  }
-
   if (!valid) return;
 
   submitBtn.disabled    = true;
@@ -58,11 +30,8 @@ form.addEventListener('submit', async (e) => {
 
   const payload = {
     'Navn':                   nameInput.value.trim(),
-    'Navn på følge':          hasGuestCheckbox.checked ? guestNameInput.value.trim() : '–',
     'Ønsker hotell':          document.getElementById('wantsHotel').checked ? 'Ja' : 'Nei',
-    'Allergi og preferanser': allergyCount.value !== '0'
-                                ? document.getElementById('allergyDetail').value.trim() || '–'
-                                : '–',
+    'Allergi og preferanser': document.getElementById('allergyDetail').value.trim() || '–',
     'Kommentar':              document.getElementById('comment').value.trim() || '–',
   };
 

@@ -9,7 +9,7 @@
   <link rel="preload" as="image" href="images/Monogram_IH_2.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/passord.css" />
 </head>
@@ -20,7 +20,7 @@
     <div class="passord-kort">
       <img src="images/Monogram_IH_2.png" alt="IH-monogram" class="passord-logo" />
       <h1 class="passord-tittel">
-        <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="passord-tittel__img" />
+        <img src="images/IngridOgHerman.png?v=2" alt="Ingrid &amp; Herman" class="passord-tittel__img" />
       </h1>
       <p class="passord-tekst">Skriv inn koden du har fått for å se siden.</p>
       <div class="passord-felt-wrap">
@@ -39,7 +39,8 @@
   </div>
 
   <!-- ======= HERO =======
-       Monogram: images/Monogram_IH_2.png -->
+       Monogram: images/Monogram_IH_2.png
+       Kun monogrammet skal vises her – fyller ~100vh av skjermen. -->
   <section class="hero">
     <div class="hero__inner">
       <img
@@ -49,33 +50,26 @@
         fetchpriority="high"
         decoding="async"
       />
-      <p class="hero__date">7. august 2027 · Loshavn</p>
     </div>
     <a href="#program" class="hero__scroll" aria-label="Scroll til program">
       <span class="hero__scroll-icon">↓</span>
     </a>
   </section>
 
-  <!-- ======= PROGRAM ======= -->
+  <!-- ======= PROGRAM (inkl. Toastmaster, Fredag, Lørdag) ======= -->
   <section class="section program" id="program">
     <div class="container">
-      <h2 class="section__title">Program</h2>
-      <p class="section__subtitle">6.–8. august 2027</p>
+      <h2 class="section__title">Program for bryllupshelgen</h2>
 
       <p class="program__intro">
-        Vi planlegger å gifte oss i nydelige Farsund, og håper dere har mulighet til å tilbringe
-        bryllupshelgen sammen med oss. Vi legger opp til en helg fylt med hyggelige opplevelser,
-        god mat og tid sammen med familie og venner.
+        Vi gifter oss i Farsund 7. august 2027, og håper at du/dere har mulighet til å tilbringe
+        bryllupshelgen sammen med oss. Her finner dere mer detaljer om programmet for helgen.
+        Vi gleder oss!
       </p>
-      <p class="program__intro">
-        Bryllupshelgen varer fra fredag til lørdag, og vi håper så mange som mulig har anledning
-        til å komme allerede torsdag 5. august for å få med seg hele opplegget og nyte sensommeren
-        i Farsund med oss.
-      </p>
+
       <div class="tabs" role="tablist" aria-label="Programdager">
         <button class="tab tab--active" role="tab" aria-selected="true"  aria-controls="fredag" data-day="fredag">Fredag</button>
         <button class="tab"             role="tab" aria-selected="false" aria-controls="lordag" data-day="lordag">Lørdag</button>
-        <button class="tab"             role="tab" aria-selected="false" aria-controls="sondag" data-day="sondag">Søndag</button>
       </div>
 
       <!-- Fredag 6. august -->
@@ -85,9 +79,8 @@
           <li class="schedule__item">
             <span class="schedule__time">18:00 – 22:00</span>
             <div class="schedule__info">
-              <strong>Barbeque på Rederiet hotell</strong>
-              <span>Oppmøte på Rederiet</span>
-              <span class="schedule__note">Dress code: 1950-tallets USA – alle kler seg ut! Tenk Elvis, Marilyn, rockabilly, diner og rock’n’roll.</span>
+              <strong>Barbeque på Rederiet Hotell</strong>
+              <span class="schedule__note">Dress code: Uformelt, med en touch av 50 tallet</span>
               <a href="moodboard.html" class="schedule__link">Se moodboard →</a>
             </div>
           </li>
@@ -101,77 +94,87 @@
           <li class="schedule__item">
             <span class="schedule__time">Kl. 14:00</span>
             <div class="schedule__info">
-              <strong>Henting</strong>
-              <span>På Torvet.</span>
+              <strong>Gjestene samles på torvet for felles transport til vielsen</strong>
             </div>
           </li>
           <li class="schedule__item">
             <span class="schedule__time">Kl. 15:00</span>
             <div class="schedule__info">
-              <strong>Vielse av Ingrid &amp; Herman</strong>
-              <span>Loshavn bedehus · Etter vielsen går turen direkte videre til Eikvåg.</span>
+              <strong>Vielse i Loshavn Bedehus</strong>
+              <span>Etter vielsen går turen direkte til Eikvåg.</span>
             </div>
           </li>
           <li class="schedule__item">
-            <span class="schedule__time">Kl. 15:30</span>
+            <span class="schedule__time">Kl. 16:00</span>
             <div class="schedule__info">
-              <strong>Middag &amp; fest i Eikvåg</strong>
-              <span>Middag, taler og feiring utover kvelden med musikk, dans og sommerstemning ved sjøen.</span>
+              <strong>Bryllupsmiddag og fest i Eikvåg</strong>
               <span class="schedule__note">Dress code: Smoking / mørk dress</span>
-              <span class="schedule__note">Toastmastere: Gaute Jonasson og Christer Berge – kontaktinfo lenger ned på siden.</span>
             </div>
           </li>
           <li class="schedule__item">
-            <span class="schedule__time">23:00 – 02:00</span>
+            <span class="schedule__time">00:00 – 02:00</span>
             <div class="schedule__info">
               <strong>Transport til Rederiet Hotell</strong>
-              <span>Avgang fra Eikvåg hver time mellom kl. 23:00 og 02:00.</span>
+              <span>Det vil bli satt opp transport fra Eikvåg med avganger omtrent hver halvtime.</span>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- Søndag 8. august -->
-      <div class="day-panel" id="sondag" role="tabpanel" tabindex="0">
-        <p class="day-panel__date">Søndag 8. august</p>
-        <ul class="schedule">
-          <li class="schedule__item">
-            <span class="schedule__time">09:00 – 12:00</span>
-            <div class="schedule__info">
-              <strong>Brunchbuffet på Rederiet Hotell</strong>
-              <span>Alle er velkomne – også de som ikke bor på hotellet.</span>
-              <span class="schedule__note">Søndag blir en ny dag da.</span>
-            </div>
-          </li>
-        </ul>
+      <!-- Toastmaster: under fredag/lørdag-programmet -->
+      <div class="toastmaster program__toastmaster">
+        <h2 class="section__title">Toastmaster</h2>
+        <p class="section__subtitle">Ønsker du å si noen ord?</p>
+        <p class="toastmaster__intro">
+          Vi blir veldig glade for taler og innslag under middagen. Ta kontakt med toastmasterne
+          i god tid, så setter de opp programmet for kvelden.
+        </p>
+        <div class="toastmaster__grid">
+          <div class="toastmaster__kort">
+            <span class="toastmaster__rolle">Toastmaster</span>
+            <h3>Gaute Jonasson</h3>
+            <a href="tel:+4795000782" class="toastmaster__tlf">950 00 782</a>
+          </div>
+          <div class="toastmaster__kort">
+            <span class="toastmaster__rolle">Toastmaster</span>
+            <h3>Christer Berge</h3>
+            <a href="tel:+4745491670" class="toastmaster__tlf">454 91 670</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= PARBILDE / OM OSS =======
-       Parbilde: images/IMG_2026.jpeg
-       Bytt filnavn her dersom du laster opp et nytt bilde av paret -->
-  <section class="section couple">
-    <div class="container couple__inner">
-      <div class="couple__img-wrap">
-        <img
-          src="images/IMG_3572.jpg"
-          alt="Ingrid og Herman"
-          class="couple__img"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div class="couple__text">
-        <h2 class="section__title section__title--left couple__title">
-          <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="couple__title-img" />
+  <!-- ======= RSVP ======= -->
+  <section class="section rsvp-teaser" id="paamelding">
+    <div class="container rsvp-teaser__inner">
+      <div class="rsvp-teaser__text">
+        <h2 class="section__title section__title--left rsvp-teaser__title">
+          <svg class="rsvp-teaser__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg>
+          RSVP
         </h2>
         <p>
-          Vi er så glade for å feire denne helgen med dere – familie og venner
-          som betyr aller mest for oss. Gleder oss til å se alle i det vakre
-          Loshavn i sommer!
+          Bekreft gjerne din deltakelse via påmeldingsskjemaet. Her registrerer du også
+          eventuelle allergier og oppgir om du/dere ønsker et rom på Rederiet Hotell.
         </p>
-        <p class="couple__sig">Med all hilsen, Ingrid &amp; Herman</p>
+        <p class="rsvp-teaser__deadline">Svarfrist: <strong>1. mars 2027</strong></p>
+      </div>
+      <a href="paamelding.html" class="btn-rsvp">RSVP</a>
+    </div>
+  </section>
+
+  <!-- ======= ØNSKELISTE ======= -->
+  <section class="section wishes" id="onskeliste">
+    <div class="container">
+      <h2 class="section__title">Ønskeliste</h2>
+      <p class="wishes__intro">
+        Det viktigste for oss er å ha dere med på bryllupsdagen. Ønsker dere likevel å gi noe,
+        legger vi ut en ønskeliste her etter hvert.
+      </p>
+      <div class="wishes__grid">
+        <div class="wish-card">
+          <h3>Kommer snart</h3>
+        </div>
       </div>
     </div>
   </section>
@@ -183,7 +186,7 @@
       <p class="section__subtitle">For de som vil oppleve litt mer</p>
       <p class="aktiviteter__intro">
         For de som ønsker å oppleve mer av Farsund og områdene rundt, har vi samlet noen forslag
-        til aktiviteter og opplevelser gjennom helgen.
+        til aktiviteter og opplevelser.
       </p>
       <div class="aktiviteter__grid">
 
@@ -247,53 +250,36 @@
     </div>
   </section>
 
-  <!-- ======= TOASTMASTER ======= -->
-  <section class="section toastmaster" id="toastmaster">
-    <div class="container">
-      <h2 class="section__title">Toastmaster</h2>
-      <p class="section__subtitle">Ønsker du å si noen ord?</p>
-      <p class="toastmaster__intro">
-        Vi blir veldig glade for taler og innslag under middagen. Ta kontakt med toastmasterne
-        i god tid, så setter de opp programmet for kvelden.
-      </p>
-      <div class="toastmaster__grid">
-        <div class="toastmaster__kort">
-          <span class="toastmaster__rolle">Toastmaster</span>
-          <h3>Gaute Jonasson</h3>
-          <a href="tel:+4795000782" class="toastmaster__tlf">950 00 782</a>
-        </div>
-        <div class="toastmaster__kort">
-          <span class="toastmaster__rolle">Toastmaster</span>
-          <h3>Christer Berge</h3>
-          <a href="tel:+4745491670" class="toastmaster__tlf">454 91 670</a>
-        </div>
+  <!-- ======= PARBILDE / OM OSS =======
+       Parbilde: images/IMG_2026.jpeg
+       Bytt filnavn her dersom du laster opp et nytt bilde av paret -->
+  <section class="section couple">
+    <div class="container couple__inner">
+      <div class="couple__img-wrap">
+        <img
+          src="images/IMG_3572.jpg"
+          alt="Ingrid og Herman"
+          class="couple__img"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-    </div>
-  </section>
-
-  <!-- ======= PÅMELDING ======= -->
-  <section class="section rsvp-teaser" id="paamelding">
-    <div class="container rsvp-teaser__inner">
-      <div class="rsvp-teaser__text">
-        <h2 class="section__title section__title--left rsvp-teaser__title">
-          <svg class="rsvp-teaser__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg>
-          Påmelding til bryllup
+      <div class="couple__text">
+        <h2 class="section__title section__title--left couple__title">
+          <img src="images/IngridOgHerman.png?v=2" alt="Ingrid &amp; Herman" class="couple__title-img" />
         </h2>
         <p>
-          Vi vil så gjerne vite om du kommer! Bekreft din deltakelse ved å fylle ut
-          påmeldingsskjemaet. Her oppgir du også eventuelle allergier og om du tar med følge.
+          Vi gleder oss til å feire denne helgen med dere – familie og venner som betyr aller
+          mest for oss.
         </p>
-        <p class="rsvp-teaser__deadline">Svarfrist: <strong>1. mars 2027</strong></p>
       </div>
-      <a href="paamelding.html" class="btn-rsvp">Meld deg på</a>
     </div>
   </section>
 
   <!-- ======= FOOTER ======= -->
   <footer class="footer">
-    <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="footer__logo" />
+    <img src="images/IngridOgHerman.png?v=2" alt="Ingrid &amp; Herman" class="footer__logo" />
     <p>7. august 2027 · Loshavn</p>
-    <p class="footer__small">Med glede &amp; kjærlighet</p>
   </footer>
 
   <script src="js/main.js"></script>

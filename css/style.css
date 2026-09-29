@@ -16,7 +16,7 @@
   --shadow:     0 4px 24px rgba(130,138,147,.16);
   --transition: .25s ease;
 
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'Lato', system-ui, sans-serif;
 }
 
@@ -50,7 +50,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 .section__title {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: clamp(2.1rem, 5.5vw, 3.2rem);
   font-weight: 600;
   color: var(--brown-dark);
   text-align: center;
@@ -77,13 +77,14 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: none;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  min-height: 90vh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 1.5rem 5rem;
+  padding: 3rem 1.5rem;
   background: var(--cream);
 }
 
@@ -91,7 +92,6 @@ img { display: block; max-width: 100%; height: auto; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.75rem;
 }
 
 .hero__monogram {
@@ -99,18 +99,9 @@ img { display: block; max-width: 100%; height: auto; }
   height: auto;
 }
 
-.hero__date {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.2rem;
-  letter-spacing: .04em;
-  color: var(--brown-dark);
-}
-
 @media (max-width: 640px) {
-  .hero { min-height: 80vh; padding: 4.5rem 1.25rem 3.5rem; }
+  .hero { padding: 2.5rem 1.25rem; }
   .hero__monogram { width: 80vw; }
-  .hero__date { font-size: 1.05rem; }
 }
 
 /* Scroll-pil */
@@ -144,18 +135,26 @@ img { display: block; max-width: 100%; height: auto; }
   padding: 56px 0;
 }
 
-.program { background: var(--cream); }
+.program {
+  background: var(--cream);
+  border-top: 1px solid var(--detail);
+}
 
 .program__intro {
   max-width: 620px;
-  margin: 0 auto .9rem;
+  margin: 0 auto 2.5rem;
   text-align: center;
   color: var(--text-light);
-  font-size: .97rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
-.program__intro + .tabs { margin-top: 2rem; }
+.program__toastmaster {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--detail);
+}
 
 .tabs {
   display: flex;
@@ -192,13 +191,23 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* Dag-paneler */
-.day-panel { display: none; }
+.day-panel {
+  display: none;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--detail);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.25rem 2rem 2rem;
+}
 .day-panel--active { display: block; }
 
 .day-panel__date {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.15rem;
+  font-weight: 500;
+  font-size: 1.5rem;
   color: var(--terra);
   margin-bottom: 1.5rem;
   text-align: center;
@@ -354,19 +363,9 @@ img { display: block; max-width: 100%; height: auto; }
 
 .couple__text p { color: var(--text); font-size: .98rem; }
 
-.couple__sig {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.1rem !important;
-  color: var(--brown) !important;
-  margin-top: .5rem;
-}
-
 /* ===========================
-   TOASTMASTER
+   TOASTMASTER (i Program-seksjonen)
    =========================== */
-.toastmaster { background: var(--cream); }
-
 .toastmaster__intro {
   text-align: center;
   color: var(--text-light);
@@ -753,6 +752,8 @@ img { display: block; max-width: 100%; height: auto; }
   .tabs { gap: .5rem; }
   .tab  { font-size: .8rem; padding: .45rem 1rem; }
 
+  .day-panel { padding: 1.5rem 1.25rem 1.25rem; }
+
   .schedule__item { flex-direction: column; gap: .2rem; }
   .schedule__time { min-width: unset; }
 
@@ -764,7 +765,6 @@ img { display: block; max-width: 100%; height: auto; }
   .couple__img-wrap { aspect-ratio: 4/3; }
   .section__title--left { text-align: center; }
   .couple__text { align-items: center; text-align: center; }
-  .couple__sig  { text-align: center; }
 
   /* Ønskeliste: én kolonne */
   .wishes__grid { grid-template-columns: 1fr; }
@@ -1154,35 +1154,31 @@ img { display: block; max-width: 100%; height: auto; }
   .section { padding: 64px 0; }
 
   /* 3. Typografi: mindre, mer raffinerte overskrifter (-14%) */
-  .section__title { font-size: 2.4rem; }
+  .section__title { font-size: 2.7rem; }
   .section__subtitle { margin-bottom: 1.9rem; }
 
-  /* 4. Hero: mindre dominerende høyde */
-  .hero { min-height: 78vh; }
-
-  /* 5. Program: smalere/mer lesbar tekstbredde, mindre luft rundt tittel */
+  /* 4. Program: smalere/mer lesbar tekstbredde, mindre luft rundt tittel */
   .program .container { max-width: 920px; }
-  .program__intro { margin-bottom: .7rem; }
-  .program__intro + .tabs { margin-top: 1.6rem; }
+  .program__intro { margin-bottom: 2rem; }
+  .program__toastmaster { margin-top: 2.2rem; padding-top: 2rem; }
   .tabs { margin-bottom: 1.6rem; }
   .day-panel__date { margin-bottom: 1.2rem; }
   .day-panel__intro { margin-bottom: .8rem; }
 
-  /* 6. Paret: litt smalere/mer balansert enn full container */
-  .couple__inner { max-width: 980px; margin-inline: auto; gap: 2.5rem; }
+  /* 5. Toastmaster (i Program): lavere kort */
+  .toastmaster__intro { margin-bottom: 1.5rem; }
+  .toastmaster__kort { padding: 1.15rem 1.5rem; }
 
-  /* 7. Ting å gjøre: bredere grid, litt lavere kort */
+  /* 6. Ting å gjøre: bredere grid, litt lavere kort */
   .aktiviteter .container { max-width: 1060px; }
   .aktiviteter__intro { margin-bottom: 1.9rem; }
   .aktiviteter__grid { gap: 22px; }
   .aktivitet-kort { padding: 1.3rem 1.2rem; }
 
-  /* 8. Toastmaster: smalere container, lavere kort */
-  .toastmaster .container { max-width: 760px; }
-  .toastmaster__intro { margin-bottom: 1.5rem; }
-  .toastmaster__kort { padding: 1.15rem 1.5rem; }
+  /* 7. Paret: litt smalere/mer balansert enn full container */
+  .couple__inner { max-width: 980px; margin-inline: auto; gap: 2.5rem; }
 
-  /* 9. Påmelding / Footer: strammere, men fortsatt tydelig CTA */
+  /* 8. Påmelding / Footer: strammere, men fortsatt tydelig CTA */
   .rsvp-teaser__text { gap: .6rem; }
   .footer { padding: 2rem 1rem; }
 }
