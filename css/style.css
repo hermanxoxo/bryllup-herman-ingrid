@@ -111,12 +111,16 @@ img { display: block; max-width: 100%; height: auto; }
   /* iPhone Safari: 100svh er høyden MED verktøylinjene synlige, men siden tegnes
      helt ned til skjermkanten bak den (gjennomsiktige) nederste verktøylinjen.
      Heroen dekker derfor hele skjermen (100lvh), mens innhold og pil holdes
-     innenfor den synlige delen ved å legge differansen (lvh − svh) til i bunnen. */
+     innenfor den synlige delen ved å legge differansen (lvh − svh) til i bunnen.
+     --hero-buffer: ekstra høyde fordi Safari likevel viser noen piksler av neste
+     seksjon. Den legges også til i bunnluften og pilens plassering, slik at
+     innhold og pil står nøyaktig der de sto – bare heroen blir lengre. */
+  :root { --hero-buffer: 30px; }
   .hero {
-    min-height: 100vh;
-    min-height: 100lvh;
-    padding: 1.5rem 1.25rem 4rem;
-    padding-bottom: calc(4rem + 100lvh - 100svh);
+    min-height: calc(100vh + var(--hero-buffer));
+    min-height: calc(100lvh + var(--hero-buffer));
+    padding: 1.5rem 1.25rem calc(4rem + var(--hero-buffer));
+    padding-bottom: calc(4rem + var(--hero-buffer) + 100lvh - 100svh);
   }
   /* Monogrammet begrenses også av skjermhøyden, slik at monogram + tekst
      får plass på første skjermbilde også på små iPhones. */
@@ -716,7 +720,7 @@ img { display: block; max-width: 100%; height: auto; }
   }
 
   /* Scroll-pilen holdes over Safari sin nederste verktøylinje (se .hero over) */
-  .hero__scroll { bottom: calc(1.5rem + 100lvh - 100svh); }
+  .hero__scroll { bottom: calc(1.5rem + var(--hero-buffer) + 100lvh - 100svh); }
 
   /* Program */
   .program__title { margin-bottom: 1.75rem; }
