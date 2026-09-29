@@ -40,7 +40,7 @@
 
   <!-- ======= HERO =======
        Monogram: images/Monogram_IH_2.png
-       Kun monogrammet skal vises her – fyller ~100vh av skjermen. -->
+       Monogram + introtekst – fyller første skjermbilde (100svh). -->
   <section class="hero">
     <div class="hero__inner">
       <img
@@ -50,6 +50,11 @@
         fetchpriority="high"
         decoding="async"
       />
+      <p class="hero__intro">
+        Vi gifter oss i Farsund 7. august 2027, og håper at du/dere har mulighet til å tilbringe
+        bryllupshelgen sammen med oss. Her finner dere mer detaljer om programmet for helgen.
+        Vi gleder oss!
+      </p>
     </div>
     <a href="#program" class="hero__scroll" aria-label="Scroll til program">
       <span class="hero__scroll-icon">↓</span>
@@ -59,13 +64,7 @@
   <!-- ======= PROGRAM (inkl. Toastmaster, Fredag, Lørdag) ======= -->
   <section class="section program" id="program">
     <div class="container">
-      <h2 class="section__title">Program for bryllupshelgen</h2>
-
-      <p class="program__intro">
-        Vi gifter oss i Farsund 7. august 2027, og håper at du/dere har mulighet til å tilbringe
-        bryllupshelgen sammen med oss. Her finner dere mer detaljer om programmet for helgen.
-        Vi gleder oss!
-      </p>
+      <h2 class="section__title program__title">Program for bryllupshelgen</h2>
 
       <div class="tabs" role="tablist" aria-label="Programdager">
         <button class="tab tab--active" role="tab" aria-selected="true"  aria-controls="fredag" data-day="fredag">Fredag</button>
@@ -183,7 +182,6 @@
   <section class="section aktiviteter" id="aktiviteter">
     <div class="container">
       <h2 class="section__title">Ting å gjøre i Farsund</h2>
-      <p class="section__subtitle">For de som vil oppleve litt mer</p>
       <p class="aktiviteter__intro">
         For de som ønsker å oppleve mer av Farsund og områdene rundt, har vi samlet noen forslag
         til aktiviteter og opplevelser.

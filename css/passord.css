@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  overflow-y: auto; /* kortet kan scrolles når iOS-tastaturet er oppe */
 }
 
 .passord-overlay.skjult {
@@ -60,6 +61,7 @@
 
 .passord-felt {
   flex: 1;
+  min-width: 0; /* input har ellers en innebygd minstebredde som sprenger kortet på smale skjermer */
   font-family: var(--font-sans);
   font-size: 1rem;
   padding: .65rem 1rem;
@@ -110,6 +112,11 @@
 
 .passord-feil.synlig {
   opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .passord-overlay { padding: 1.25rem; }
+  .passord-kort { padding: 2.25rem 1.5rem; }
 }
 
 @keyframes rist {
