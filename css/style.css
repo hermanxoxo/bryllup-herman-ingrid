@@ -71,15 +71,6 @@ img { display: block; max-width: 100%; height: auto; }
 
 .section__title--left { text-align: left; }
 
-.section__subtitle {
-  text-align: center;
-  color: var(--text-light);
-  font-size: .95rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  margin-bottom: 2.5rem;
-}
-
 /* ===========================
    HERO
    =========================== */
@@ -117,7 +108,16 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 @media (max-width: 640px) {
-  .hero { padding: 1.5rem 1.25rem 4rem; }
+  /* iPhone Safari: 100svh er høyden MED verktøylinjene synlige, men siden tegnes
+     helt ned til skjermkanten bak den (gjennomsiktige) nederste verktøylinjen.
+     Heroen dekker derfor hele skjermen (100lvh), mens innhold og pil holdes
+     innenfor den synlige delen ved å legge differansen (lvh − svh) til i bunnen. */
+  .hero {
+    min-height: 100vh;
+    min-height: 100lvh;
+    padding: 1.5rem 1.25rem 4rem;
+    padding-bottom: calc(4rem + 100lvh - 100svh);
+  }
   /* Monogrammet begrenses også av skjermhøyden, slik at monogram + tekst
      får plass på første skjermbilde også på små iPhones. */
   .hero__monogram {
@@ -714,7 +714,9 @@ img { display: block; max-width: 100%; height: auto; }
     line-height: 1.2;
     text-wrap: balance;
   }
-  .section__subtitle { font-size: .85rem; margin-bottom: 2rem; }
+
+  /* Scroll-pilen holdes over Safari sin nederste verktøylinje (se .hero over) */
+  .hero__scroll { bottom: calc(1.5rem + 100lvh - 100svh); }
 
   /* Program */
   .program__title { margin-bottom: 1.75rem; }
@@ -1161,7 +1163,6 @@ img { display: block; max-width: 100%; height: auto; }
 
   /* 3. Typografi: mindre, mer raffinerte overskrifter (-14%) */
   .section__title { font-size: 2.7rem; }
-  .section__subtitle { margin-bottom: 1.9rem; }
 
   /* 4. Program: smalere/mer lesbar tekstbredde, mindre luft rundt tittel */
   .program .container { max-width: 920px; }
