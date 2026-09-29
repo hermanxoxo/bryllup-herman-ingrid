@@ -1,10 +1,8 @@
-// Gyldige koder → hvilken variant av landingssiden som vises.
+// Gyldig kode → adgang til siden.
 // Nøkkelen er koden normalisert: små bokstaver og uten mellomrom,
-// slik at både "Resort 2027" og "Resort2027" fungerer.
+// slik at både "Loshavn 2027" og "Loshavn2027" fungerer.
 const KODER = {
   loshavn2027: 'loshavn',
-  farsund2027: 'farsund',
-  resort2027:  'resort',
 };
 
 const SESJON_NOKKEL = 'bryllup_adgang';

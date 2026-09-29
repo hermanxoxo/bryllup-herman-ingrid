@@ -15,9 +15,9 @@
 
 .passord-kort {
   background: var(--white);
-  border: 1px solid var(--beige);
+  border: 1px solid var(--detail);
   border-radius: var(--radius);
-  box-shadow: 0 8px 40px rgba(61,47,30,.14);
+  box-shadow: 0 8px 40px rgba(130,138,147,.2);
   padding: 3rem 2.5rem;
   width: min(420px, 100%);
   display: flex;
@@ -28,16 +28,19 @@
 }
 
 .passord-logo {
-  font-size: 2.5rem;
-  line-height: 1;
+  width: 90px;
+  height: auto;
+  display: block;
 }
 
 .passord-tittel {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--brown-dark);
   margin: 0;
+}
+
+.passord-tittel__img {
+  width: 220px;
+  max-width: 80%;
+  height: auto;
 }
 
 .passord-tekst {
@@ -58,7 +61,7 @@
   font-family: var(--font-sans);
   font-size: 1rem;
   padding: .65rem 1rem;
-  border: 1.5px solid var(--beige);
+  border: 1.5px solid var(--detail);
   border-radius: 8px;
   background: var(--cream);
   color: var(--text);

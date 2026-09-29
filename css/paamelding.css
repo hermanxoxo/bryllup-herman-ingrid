@@ -84,7 +84,13 @@ body.form-page {
   display: flex;
 }
 
-.form-success__icon { font-size: 3rem; }
+.form-success__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--brown-dark);
+}
+
+.form-success__icon svg { width: 100%; height: 100%; }
 .form-success h2 {
   font-family: var(--font-serif);
   font-size: 1.6rem;
@@ -174,6 +180,14 @@ body.form-page {
   accent-color: var(--brown);
   cursor: pointer;
   flex-shrink: 0;
+}
+
+.field__checkbox--multiline {
+  align-items: flex-start;
+}
+
+.field__checkbox--multiline input[type="checkbox"] {
+  margin-top: .2rem;
 }
 
 .field__checkbox-label {

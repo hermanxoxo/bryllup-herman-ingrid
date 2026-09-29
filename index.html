@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ingrid og Herman gifter seg 7. august 2027 i Loshavn. Se program, overnatting og meld deg på." />
-  <meta name="theme-color" content="#3D2F1E" />
+  <meta name="description" content="Ingrid og Herman gifter seg 7. august 2027 i Loshavn. Se program og meld deg på." />
+  <meta name="theme-color" content="#828A93" />
   <title>Ingrid &amp; Herman gifter seg</title>
-  <link rel="preload" as="image" href="images/forside.png" />
+  <link rel="preload" as="image" href="images/Monogram_IH_2.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -18,8 +18,10 @@
   <!-- Passord-overlay -->
   <div class="passord-overlay" id="passordOverlay">
     <div class="passord-kort">
-      <div class="passord-logo">💌</div>
-      <h1 class="passord-tittel">Ingrid &amp; Herman</h1>
+      <img src="images/Monogram_IH_2.png" alt="IH-monogram" class="passord-logo" />
+      <h1 class="passord-tittel">
+        <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="passord-tittel__img" />
+      </h1>
       <p class="passord-tekst">Skriv inn koden du har fått for å se siden.</p>
       <div class="passord-felt-wrap">
         <input
@@ -37,19 +39,18 @@
   </div>
 
   <!-- ======= HERO =======
-       Hero-bilde: images/forside.png
-       Bytt filnavn her for å bruke et annet hero-bilde -->
+       Monogram: images/Monogram_IH_2.png -->
   <section class="hero">
-    <picture>
+    <div class="hero__inner">
       <img
-        class="hero__bg"
-        src="images/forside.png"
-        alt="Ingrid og Herman gifter seg – Loshavn 7. august 2027"
+        class="hero__monogram"
+        src="images/Monogram_IH_2.png"
+        alt="Ingrid &amp; Herman monogram"
         fetchpriority="high"
         decoding="async"
       />
-    </picture>
-    <div class="hero__overlay"></div>
+      <p class="hero__date">7. august 2027 · Loshavn</p>
+    </div>
     <a href="#program" class="hero__scroll" aria-label="Scroll til program">
       <span class="hero__scroll-icon">↓</span>
     </a>
@@ -71,15 +72,6 @@
         til å komme allerede torsdag 5. august for å få med seg hele opplegget og nyte sensommeren
         i Farsund med oss.
       </p>
-      <p class="program__intro" data-kode="loshavn">
-        Vi har holdt av hotellrom for de som ønsker å bo på Rederiet Hotell i Farsund sentrum.
-        Rom kan bookes med koden som ligger lenger nede på siden.
-      </p>
-      <p class="program__intro" data-kode="resort">
-        Vi har holdt av hotellrom for de som ønsker å bo på Farsund Resort.
-        Rom kan bookes med koden som ligger lenger nede på siden.
-      </p>
-
       <div class="tabs" role="tablist" aria-label="Programdager">
         <button class="tab tab--active" role="tab" aria-selected="true"  aria-controls="fredag" data-day="fredag">Fredag</button>
         <button class="tab"             role="tab" aria-selected="false" aria-controls="lordag" data-day="lordag">Lørdag</button>
@@ -91,28 +83,12 @@
         <p class="day-panel__date">Fredag 6. august</p>
         <ul class="schedule">
           <li class="schedule__item">
-            <span class="schedule__time">12:00 – 16:00</span>
-            <div class="schedule__info">
-              <strong><span class="schedule__icon">☀️</span>Bryggehygge!</strong>
-              <span>Sørlandsidyll på bryggen i Eikvåg. Vannsport organiseres for de som føler seg eventyrlystne, og for de som foretrekker soling og pils er det også lov.</span>
-              <span>Det serveres lett grillmat. Det er stort sett alltid sol i Farsund, men vi kommer tilbake med en plan B hvis værgudene ikke er på vår side.</span>
-              <span class="schedule__note">Ta med badetøy og håndkle!</span>
-            </div>
-          </li>
-          <li class="schedule__item">
             <span class="schedule__time">18:00 – 22:00</span>
             <div class="schedule__info">
-              <strong><span class="schedule__icon schedule__icon--flag" aria-hidden="true"><svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#B22234"/><g fill="#fff"><rect y="1.08" width="20" height="1.08"/><rect y="3.23" width="20" height="1.08"/><rect y="5.38" width="20" height="1.08"/><rect y="7.54" width="20" height="1.08"/><rect y="9.69" width="20" height="1.08"/><rect y="11.85" width="20" height="1.08"/></g><rect width="8" height="7.54" fill="#3C3B6E"/></svg></span>Back to the 50s på Rederiet</strong>
+              <strong>Barbeque på Rederiet hotell</strong>
               <span>Oppmøte på Rederiet</span>
               <span class="schedule__note">Dress code: 1950-tallets USA – alle kler seg ut! Tenk Elvis, Marilyn, rockabilly, diner og rock’n’roll.</span>
               <a href="moodboard.html" class="schedule__link">Se moodboard →</a>
-            </div>
-          </li>
-          <li class="schedule__item">
-            <span class="schedule__time">Transport</span>
-            <div class="schedule__info">
-              <strong><span class="schedule__icon">🚌</span>Transport til og fra alle aktiviteter</strong>
-              <span>Vi organiserer transport fra Rederiet Hotell. Mer informasjon kommer nærmere.</span>
             </div>
           </li>
         </ul>
@@ -123,23 +99,23 @@
         <p class="day-panel__date">Lørdag 7. august · Bryllupsdagen</p>
         <ul class="schedule">
           <li class="schedule__item">
-            <span class="schedule__time">Kl. 13:00</span>
+            <span class="schedule__time">Kl. 14:00</span>
             <div class="schedule__info">
-              <strong><span class="schedule__icon">🚌</span>Henting</strong>
-              <span>Oppmøte utenfor Torvet i Farsund sentrum (ca. 3 min å spasere fra Rederiet Hotell) for avreise til Loshavn.</span>
+              <strong>Henting</strong>
+              <span>På Torvet.</span>
             </div>
           </li>
           <li class="schedule__item">
-            <span class="schedule__time">Kl. 14:00</span>
+            <span class="schedule__time">Kl. 15:00</span>
             <div class="schedule__info">
-              <strong><span class="schedule__icon">💍</span>Vielse av Ingrid &amp; Herman</strong>
+              <strong>Vielse av Ingrid &amp; Herman</strong>
               <span>Loshavn bedehus · Etter vielsen går turen direkte videre til Eikvåg.</span>
             </div>
           </li>
           <li class="schedule__item">
             <span class="schedule__time">Kl. 15:30</span>
             <div class="schedule__info">
-              <strong><span class="schedule__icon">🎉</span>Middag &amp; fest i Eikvåg</strong>
+              <strong>Middag &amp; fest i Eikvåg</strong>
               <span>Middag, taler og feiring utover kvelden med musikk, dans og sommerstemning ved sjøen.</span>
               <span class="schedule__note">Dress code: Smoking / mørk dress</span>
               <span class="schedule__note">Toastmastere: Gaute Jonasson og Christer Berge – kontaktinfo lenger ned på siden.</span>
@@ -148,7 +124,7 @@
           <li class="schedule__item">
             <span class="schedule__time">23:00 – 02:00</span>
             <div class="schedule__info">
-              <strong><span class="schedule__icon">🚌</span>Transport til Rederiet Hotell</strong>
+              <strong>Transport til Rederiet Hotell</strong>
               <span>Avgang fra Eikvåg hver time mellom kl. 23:00 og 02:00.</span>
             </div>
           </li>
@@ -162,7 +138,7 @@
           <li class="schedule__item">
             <span class="schedule__time">09:00 – 12:00</span>
             <div class="schedule__info">
-              <strong><span class="schedule__icon">🥐</span>Brunchbuffet på Rederiet Hotell</strong>
+              <strong>Brunchbuffet på Rederiet Hotell</strong>
               <span>Alle er velkomne – også de som ikke bor på hotellet.</span>
               <span class="schedule__note">Søndag blir en ny dag da.</span>
             </div>
@@ -187,55 +163,15 @@
         />
       </div>
       <div class="couple__text">
-        <h2 class="section__title section__title--left">Ingrid &amp; Herman</h2>
+        <h2 class="section__title section__title--left couple__title">
+          <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="couple__title-img" />
+        </h2>
         <p>
           Vi er så glade for å feire denne helgen med dere – familie og venner
           som betyr aller mest for oss. Gleder oss til å se alle i det vakre
           Loshavn i sommer!
         </p>
         <p class="couple__sig">Med all hilsen, Ingrid &amp; Herman</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= HOTELL – REDERIET (kode: Loshavn2027) ======= -->
-  <section class="section hotel" id="hotell" data-kode="loshavn">
-    <div class="container">
-      <h2 class="section__title">Overnatting</h2>
-      <div class="hotel__logo-wrap">
-        <img src="images/Logo_rederiet_cropped.png" alt="Rederiet Hotell" class="hotel__logo" loading="lazy" decoding="async" />
-      </div>
-      <div class="hotel__card hotel__card--rederiet">
-        <div class="hotel__text">
-          <p>
-            Rederiet Hotell er avholdt for booking av hotellrom til bryllupshelgen.
-            Hotellet ligger i hjertet av Farsund sentrum, med enkel tilgang til alle aktiviteter.
-          </p>
-          <p class="hotel__booking-code">
-            Bruk kode <strong>XXX</strong> for å booke rom til avtalt gruppepris.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= HOTELL – FARSUND RESORT (kode: Resort 2027 / Resort2027) ======= -->
-  <section class="section hotel" id="hotell-resort" data-kode="resort">
-    <div class="container">
-      <h2 class="section__title">Overnatting</h2>
-      <div class="hotel__logo-wrap">
-        <img src="images/Logo_resort_cropped.png" alt="Farsund Resort" class="hotel__logo hotel__logo--resort" loading="lazy" decoding="async" />
-      </div>
-      <div class="hotel__card">
-        <div class="hotel__text">
-          <p>
-            <strong>Farsund Resort</strong> er avholdt for booking av hotellrom til bryllupshelgen.
-            Her bor dere rett ved sjøen, med kort vei til aktivitetene gjennom helgen.
-          </p>
-          <p>
-            Bruk kode <strong>XXX</strong> for å booke rom til avtalt gruppepris.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -252,43 +188,57 @@
       <div class="aktiviteter__grid">
 
         <div class="aktivitet-kort">
-          <div class="aktivitet-kort__ikon">🎯</div>
+          <div class="aktivitet-kort__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z"/><path d="m2.5 21.5 1.4-1.4"/><path d="m20.1 3.9 1.4-1.4"/><path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z"/><path d="m9.6 14.4 4.8-4.8"/></svg>
+          </div>
           <h3>Camp Farsund</h3>
           <p>Innendørs aktiviteter som squash, padel, minigolf, buldrevegg og golfsimulator – perfekt dersom været ikke spiller på lag.</p>
         </div>
 
         <div class="aktivitet-kort">
-          <div class="aktivitet-kort__ikon">🏖️</div>
+          <div class="aktivitet-kort__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
+          </div>
           <h3>Nordhasselvika</h3>
           <p>Farsund er kjent for sine vakre strender, og Nordhasselvika ble nylig kåret av The Guardian til en av Europas beste skjulte strender.</p>
         </div>
 
         <div class="aktivitet-kort">
-          <div class="aktivitet-kort__ikon">🪨</div>
+          <div class="aktivitet-kort__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>
+          </div>
           <h3>Helleristningene på Penne</h3>
           <p>På Lista kan man besøke de fascinerende helleristningene på Penne – et av Norges mest kjente helleristningsfelt.</p>
         </div>
 
         <div class="aktivitet-kort">
-          <div class="aktivitet-kort__ikon">🥞</div>
+          <div class="aktivitet-kort__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></svg>
+          </div>
           <h3>Det Amerikanske Lista</h3>
           <p>Ta turen til Vanse og opplev «Det Amerikanske Lista» – med blant annet Brooklyn Bridge og amerikanske pannekaker hos Larsens Bakery.</p>
         </div>
 
         <div class="aktivitet-kort">
-          <div class="aktivitet-kort__ikon">🎣</div>
+          <div class="aktivitet-kort__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"/><path d="M18 12v.5"/><path d="M16 17.93a9.77 9.77 0 0 1 0-11.86"/><path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33"/><path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4"/><path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98"/></svg>
+          </div>
           <h3>Fisketur</h3>
           <p>Mulighet for fisketur med båtutleie fra Farsund Resort – en flott måte å oppleve skjærgården på.</p>
         </div>
 
         <div class="aktivitet-kort">
-          <div class="aktivitet-kort__ikon">🍽️</div>
+          <div class="aktivitet-kort__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+          </div>
           <h3>Middag på Under</h3>
           <p>En unik matopplevelse omtrent 45 minutter fra Farsund – verdens første undervannsrestaurant.</p>
         </div>
 
         <div class="aktivitet-kort">
-          <div class="aktivitet-kort__ikon">🌅</div>
+          <div class="aktivitet-kort__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3V2"/><path d="M16.066 16.865 7 22l2-11V6a3 3 0 016 0v5l2 11"/><path d="m19.792 4.5.866-.5"/><path d="m19.797 13.5.866.5"/><path d="M21 9h1"/><path d="M3 9H2"/><path d="m4.203 13.5-.866.5"/><path d="M4.208 4.5 3.342 4"/><path d="M5.5 22h13"/><path d="m7.932 16.875 7.377-4.178"/><path d="M8 11h8"/><path d="M8 7h8"/></svg>
+          </div>
           <h3>Varnes Fyr</h3>
           <p>Avslutt dagen med å se solnedgangen fra det vakre Varnes Fyr ytterst på Lista.</p>
         </div>
@@ -325,30 +275,28 @@
   <section class="section rsvp-teaser" id="paamelding">
     <div class="container rsvp-teaser__inner">
       <div class="rsvp-teaser__text">
-        <h2 class="section__title section__title--left">💌 Påmelding til bryllup</h2>
+        <h2 class="section__title section__title--left rsvp-teaser__title">
+          <svg class="rsvp-teaser__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg>
+          Påmelding til bryllup
+        </h2>
         <p>
           Vi vil så gjerne vite om du kommer! Bekreft din deltakelse ved å fylle ut
           påmeldingsskjemaet. Her oppgir du også eventuelle allergier og om du tar med følge.
         </p>
-        <p class="rsvp-teaser__deadline">Svarfrist: <strong>1. januar 2027</strong></p>
+        <p class="rsvp-teaser__deadline">Svarfrist: <strong>1. mars 2027</strong></p>
       </div>
       <a href="paamelding.html" class="btn-rsvp">Meld deg på</a>
     </div>
   </section>
 
-  <!-- ======= GLEDER OSS-TEASER =======
-       Felles seksjon for alle koder. Innholdet ligger i js/gleder-oss.js
-       og monteres her – endre teksten der, så oppdateres den overalt. -->
-  <div id="glederOssMount"></div>
-
   <!-- ======= FOOTER ======= -->
   <footer class="footer">
-    <p>Ingrid &amp; Herman · 7. august 2027 · Loshavn</p>
+    <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="footer__logo" />
+    <p>7. august 2027 · Loshavn</p>
     <p class="footer__small">Med glede &amp; kjærlighet</p>
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/gleder-oss.js"></script>
   <script src="js/passord.js"></script>
 </body>
 </html>

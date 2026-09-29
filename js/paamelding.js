@@ -59,6 +59,7 @@ form.addEventListener('submit', async (e) => {
   const payload = {
     'Navn':                   nameInput.value.trim(),
     'Navn på følge':          hasGuestCheckbox.checked ? guestNameInput.value.trim() : '–',
+    'Ønsker hotell':          document.getElementById('wantsHotel').checked ? 'Ja' : 'Nei',
     'Allergi og preferanser': allergyCount.value !== '0'
                                 ? document.getElementById('allergyDetail').value.trim() || '–'
                                 : '–',

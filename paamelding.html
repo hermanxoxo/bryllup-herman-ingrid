@@ -16,8 +16,10 @@
   <!-- Passord-overlay -->
   <div class="passord-overlay" id="passordOverlay">
     <div class="passord-kort">
-      <div class="passord-logo">💌</div>
-      <h1 class="passord-tittel">Ingrid &amp; Herman</h1>
+      <img src="images/Monogram_IH_2.png" alt="IH-monogram" class="passord-logo" />
+      <h1 class="passord-tittel">
+        <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="passord-tittel__img" />
+      </h1>
       <p class="passord-tekst">Skriv inn koden du har fått for å se siden.</p>
       <div class="passord-felt-wrap">
         <input
@@ -48,13 +50,15 @@
         <p>
           Vi er glade for at du vil feire denne dagen med oss!
           Fyll ut skjemaet nedenfor for å bekrefte din deltakelse.
-          Svarfrist: <strong>1. januar 2027</strong>.
+          Svarfrist: <strong>1. mars 2027</strong>.
         </p>
       </div>
 
       <!-- Suksess-melding (skjult til innsending) -->
       <div class="form-success" id="formSuccess" hidden>
-        <div class="form-success__icon">💌</div>
+        <div class="form-success__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg>
+        </div>
         <h2>Takk for påmeldingen!</h2>
         <p>Vi gleder oss til å se deg i Loshavn.</p>
         <a href="index.html" class="btn btn--primary">Tilbake til forsiden</a>
@@ -97,6 +101,16 @@
             autocomplete="off"
           />
           <span class="field__error" id="guestError">Vennligst oppgi navn på følge.</span>
+        </div>
+
+        <!-- Hotell -->
+        <div class="field">
+          <label class="field__checkbox field__checkbox--multiline">
+            <input type="checkbox" id="wantsHotel" name="Ønsker hotell" value="Ja" />
+            <span class="field__checkbox-label">
+              Vi har reservert rom på Rederiet Hotell til en pris på 850 kr per rom per natt. Dersom du/dere ønsker å benytte dere av dette tilbudet, vennligst kryss av.
+            </span>
+          </label>
         </div>
 
         <!-- Allergier -->
@@ -154,7 +168,8 @@
   </main>
 
   <footer class="footer">
-    <p>Ingrid &amp; Herman · 7. august 2027 · Loshavn</p>
+    <img src="images/IngridOgHerman.png" alt="Ingrid &amp; Herman" class="footer__logo" />
+    <p>7. august 2027 · Loshavn</p>
   </footer>
 
   <script src="js/paamelding.js"></script>
