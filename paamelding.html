@@ -20,7 +20,7 @@
       <h1 class="passord-tittel">
         <img src="images/IngridOgHerman.png?v=2" alt="Ingrid &amp; Herman" class="passord-tittel__img" />
       </h1>
-      <p class="passord-tekst">Skriv inn koden du har fått for å se siden.</p>
+      <p class="passord-tekst">Passordet finner du i bryllupsinvitasjonen</p>
       <div class="passord-felt-wrap">
         <input
           class="passord-felt"
@@ -48,8 +48,6 @@
       <div class="form-intro">
         <h1 class="section__title">RSVP</h1>
         <p>
-          Vi er glade for at du vil feire denne dagen med oss!
-          Fyll ut skjemaet nedenfor for å bekrefte din deltakelse.
           Svarfrist: <strong>1. mars 2027</strong>.
         </p>
       </div>
@@ -59,8 +57,8 @@
         <div class="form-success__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg>
         </div>
-        <h2>Takk for påmeldingen!</h2>
-        <p>Vi gleder oss til å se deg i Loshavn.</p>
+        <h2 id="successTitle">Takk for påmeldingen!</h2>
+        <p id="successText">Vi gleder oss til å se deg i Loshavn.</p>
         <a href="index.html" class="btn btn--primary">Tilbake til forsiden</a>
       </div>
 
@@ -83,7 +81,7 @@
         </div>
 
         <!-- Hotell -->
-        <div class="field">
+        <div class="field" data-kun-deltakere>
           <label class="field__checkbox field__checkbox--multiline">
             <input type="checkbox" id="wantsHotel" name="Ønsker hotell" value="Ja" />
             <span class="field__checkbox-label">
@@ -93,7 +91,7 @@
         </div>
 
         <!-- Allergier -->
-        <div class="field">
+        <div class="field" data-kun-deltakere>
           <label class="field__label field__label--small" for="allergyDetail">
             Beskriv eventuelle allergier eller preferanser
           </label>
@@ -118,6 +116,16 @@
             rows="3"
             placeholder="Andre ting vi bør vite om?"
           ></textarea>
+        </div>
+
+        <!-- Kan ikke komme -->
+        <div class="field field--avslag">
+          <label class="field__checkbox field__checkbox--multiline">
+            <input type="checkbox" id="cannotAttend" />
+            <span class="field__checkbox-label">
+              Jeg / vi har dessverre ikke anledning til å komme
+            </span>
+          </label>
         </div>
 
         <button class="btn btn--primary btn--full" type="submit" id="submitBtn">

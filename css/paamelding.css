@@ -106,6 +106,15 @@ body.form-page {
   margin-bottom: 1.4rem;
 }
 
+/* .field setter display: flex, som ellers overstyrer hidden-attributtet */
+.field[hidden] { display: none; }
+
+/* «Kan ikke komme» – skilt fra resten av skjemaet med en tynn linje */
+.field--avslag {
+  border-top: 1px solid var(--detail);
+  padding-top: 1.4rem;
+}
+
 .field--fieldset {
   border: 1px solid var(--beige);
   border-radius: var(--radius);
